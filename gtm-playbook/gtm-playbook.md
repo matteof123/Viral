@@ -510,3 +510,25 @@ Hypotheses surfaced from cross-referencing assessment, brand book, and call tran
 ### Source-priority hierarchy applied
 
 Where sources diverged, priority order: (1) call transcript > (2) UVP and assessment docs > (3) brand book > (4) AI inference. Two known divergences recorded above (HVAC vs law firms; law-firm scope). Both flagged for Dave.
+
+---
+
+## Source-Doc Reconciliation (added 2026-05-12 after re-reading Business Dev Assessment and UVP & Offer doc)
+
+After re-reading the source assessments end-to-end, the PDF playbook should be amended on the following points before being treated as canonical:
+
+1. **Lead magnet hierarchy is INVERTED in the PDF.** The UVP doc (Q9–Q11) clearly states the **primary CTA is "free 5-cut repurposing pack"** — take the prospect's existing long-form footage and cut 5 short-form variations free. The Video Grader is the **secondary** CTA (for prospects not ready to engage but willing to self-diagnose). The PDF playbook lists Video Grader as the only lead magnet. Cold copy should lead with the 5-cut repurposing pack, not the grader.
+
+2. **"No contracts" is an explicit differentiator** the PDF underweights. Assessment line: "Same-day first drafts. Dedicated editors. No contracts." Month-to-month retainer with the ability to leave any month is a real friction-reducer for cold buyers and should be surfaced in Email 2 (service offer thread) or as a PS line.
+
+3. **Humans + AI is a sixth differentiator** the PDF playbook subsumes into "speed." Assessment explicitly lists it as a peer differentiator: "AI for speed, consistency, iteration. Humans in control of creativity and judgment." This frames Viral against pure-AI editing services without dismissing AI.
+
+4. **Brand-book voice test the PDF does not surface**: "Test for a sentence: if it sounds inflated, vague, aggressive, or like every other agency on the internet, rewrite it." This is the final-pass quality gate every cold email should clear before send.
+
+5. **"Outbound is 25% capacity, fill the other 75%"** is the operational framing for Dave. Current call volume ~3/day; sales-team capacity ~12/day. The 175–200 monthly meeting target maps directly to closing this 75% capacity gap.
+
+6. **The L10 review** is the formal cadence into which weekly outbound reply intelligence should feed. L10 tracker: https://docs.google.com/spreadsheets/d/1pj1Kf9GQTZj150koPV_VwwDgRElGzh8N/
+
+7. **Brand Book**: https://docs.google.com/document/d/1anhbGi5D28qZGETpNFUyG7ZzXZF9Qg7-Kr4mTSJpRj0/edit — should be pulled at next session for any positioning detail not yet captured.
+
+These corrections should be folded into a v3 PDF playbook before campaign 1 launches, OR captured as a "playbook addendum" if the PDF is the artifact the client owns.

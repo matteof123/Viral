@@ -17,7 +17,10 @@ Viral Ideas Marketing builds the content engine that lets marketing teams ship h
 | Field | Detail |
 |-------|--------|
 | Website | viralideamarketing.com |
-| Lead magnet | Video Grader at video-grader.viralideamarketing.com + 15-minute strategist walkthrough |
+| Primary lead magnet | **Free 5-cut repurposing pack** (per Dave's UVP doc) — take prospect's existing long-form footage and cut 5 short-form variations free |
+| Secondary lead magnet | Video Grader at video-grader.viralideamarketing.com + 15-minute strategist walkthrough |
+| Tertiary lead magnet | Gated ebook for top-of-funnel prospects ([link](https://docs.google.com/document/d/17W3K_epxVTFvd_ZJkcoSzYoEpkWxoSxqU86IwPq0WyM/edit)) |
+| Commercial structure | **No contracts** (month-to-month retainer) — explicit Dave-stated differentiator |
 | Founded | 2015 |
 | Team | 83 people, fully remote |
 | Revenue (last year) | $1.2M |
@@ -50,13 +53,15 @@ Viral Ideas Marketing builds the content engine that lets marketing teams ship h
 
 **The real product:** Marketing leaders are not buying video. They are buying career insurance. When content slips, leadership blames the manager who chose the vendor. Every messaging decision should reflect that.
 
-## Five Differentiators (use these in copy)
+## Six Differentiators (use these in copy)
 
 1. **Volume AND quality, no tradeoff** — Subscription editors do volume, agencies do quality, Viral does both at scale.
 2. **Strategic creative guidance, not order-taking** — Platform-specific expertise, hook strategy, performance thinking before the edit.
 3. **Built for scale from day one** — Structured pods, managing editors, QA checkpoints, standardized workflows.
 4. **System over talent** — No dependency on unicorn editors. The system survives any one editor leaving.
 5. **Speed without sacrificing quality** — Same-day first drafts, predictable turnaround, Slack response within one hour on business days.
+6. **Humans + AI** — AI for speed, consistency, iteration. Humans in control of creativity and judgment. Explicit Dave-stated framing (assessment).
+7. **No contracts** — month-to-month retainer; the buyer can leave any month. Reduces commitment friction in cold email.
 
 ## ICP — Priority Verticals
 
@@ -256,6 +261,10 @@ Cancelled:
 - **Business Dev Assessment:** Drive file `1BLBYQt9PA4noXmYCVxuluud-APykPFb7`
 - **UVP & Offer doc:** Drive file `1XcJIyVGAkeeg7OKEY81efbDtIVOYAiNq`
 - **Discovery Questionnaire (new, 2026-05-11):** Drive file `1u-uaABxi9TNPTqoIIJKi6D-Xs8BI3RMTuGaQ5X36NgE`
+- **2026 Brand Book:** https://docs.google.com/document/d/1anhbGi5D28qZGETpNFUyG7ZzXZF9Qg7-Kr4mTSJpRj0/edit
+- **Ebook (lead magnet, top of funnel):** https://docs.google.com/document/d/17W3K_epxVTFvd_ZJkcoSzYoEpkWxoSxqU86IwPq0WyM/edit
+- **L10 KPI tracker:** https://docs.google.com/spreadsheets/d/1pj1Kf9GQTZj150koPV_VwwDgRElGzh8N/
+- **BBM paid-ads report (Dave to share):** https://drive.google.com/file/d/1GNYnL_K1_tRuMPh5Cl5aD5O1tb4k2hS2/view
 - **Viral domains list:** Drive file `162Xp21fbxUHfeS4W6izg8kicCQaHovFAyQSPteKWusI`
 - **Viral Idea Interested (pre-Kinetyca outbound):** Drive file `1yUCnHH37XfMvjQ-A7k4YJ3tBkO6OuxmNoh4FxizCpyw`
 - **Slack channels:** #viral-project (Kinetyca internal), #viral-project- (Slack Connect with Viral)
