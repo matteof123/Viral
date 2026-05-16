@@ -229,43 +229,65 @@ tied to the signal that fired].
 [PAIN -- what specifically hurts, using VOC language
 from the funnel's pain word library].
 
-[SOLUTION -- what Viral concretely does, citing the
-funnel-matched case study with full identity phrase.
-Specific differentiators from the library, not generic
-claims].
+[SOLUTION -- named workflow + measurable outcome (see
+Strong Solution Pattern below). NOT a feature list.]
 
 Worth a look for [Company]?"""
     story.append(C(email1_tpl))
-    story.append(CAP("Word target: 70-100 words. No em dashes. No exclamation marks. No spam words. No bracket placeholders. No apologetic PS. No in-body taglines. NO sign-off -- email ends at the CTA. Signature handled by EmailBison {SENDER_EMAIL_SIGNATURE} system variable."))
-    story.append(P("The CTA can swap depending on intent level:"))
+    story.append(CAP("Word target: 70-110 words. No em dashes. No exclamation marks. No spam words. No bracket placeholders. No apologetic PS. No in-body taglines. NO sign-off -- email ends at the CTA. Signature handled by EmailBison {SENDER_EMAIL_SIGNATURE} system variable."))
+
+    story.append(H2("Subject line pattern (click-bait, still on-brand)"))
+    story.append(P("2-4 words, lowercase, <b>curiosity-driven</b>. The strongest subjects fall into 4 buckets:"))
+    subj_rows = [
+        ["Pattern", "Examples"],
+        ["<b>Before [their action]</b> &mdash; implies an alternative they haven't considered",
+         "<font face='Courier'>before you hire</font> &middot; <font face='Courier'>before the hire</font>"],
+        ["<b>After [their event]</b> &mdash; implies \"and now what?\"",
+         "<font face='Courier'>after the raise</font> &middot; <font face='Courier'>after the approval</font> &middot; <font face='Courier'>after the win</font>"],
+        ["<b>Their [thing], [twist]</b> &mdash; possessive + intriguing modifier",
+         "<font face='Courier'>your [topic], untouched</font> &middot; <font face='Courier'>your q4 book</font> &middot; <font face='Courier'>your freelancer gap</font>"],
+        ["<b>Time-bound reference</b> &mdash; specific window the prospect is in",
+         "<font face='Courier'>first 90 days</font> &middot; <font face='Courier'>six week sprint</font>"],
+    ]
+    story.append(make_table(subj_rows, [3.6*inch, 3.1*inch]))
+    story.append(P("<b>Avoid:</b> urgency (\"now,\" \"closing\"), hype (\"revolutionary,\" \"game-changing\"), generic (\"quick question,\" \"video editing services\")."))
+
+    story.append(H2("CTA swaps depending on intent"))
     story.append(B("<b>Default:</b> \"Worth a look for [Company]?\""))
     story.append(B("<b>High-commitment signal</b> (FDA approval, funding round): \"Open to a 15-minute diagnostic?\" &mdash; matches VI's Doctor Frame sales method"))
+
+    story.append(H2("Strong Solution Pattern (the part most cold emails get wrong)"))
+    story.append(P("A weak solution is a feature list (\"dedicated editor, fast drafts, good QA\"). A strong solution names a workflow, a tool, and a measurable outcome. Three components, in order:"))
+    story.append(B("<b>1. Named case-study client + how they specifically use VI</b> &mdash; output volume, channel, deliverable type. (\"Self Financial runs 12 videos a month through our pod.\")"))
+    story.append(B("<b>2. A specific workflow step OR a measurable outcome</b> &mdash; name the tool, the handoff, or the moment something becomes true. (\"Their editor learned the brand from the kit handoff and was catching brand drift by video 3.\")"))
+    story.append(B("<b>3. SLA + tool + QA gate</b> &mdash; name the time, the tool, and the quality step. (\"Drafts back in 24 hours through Frame.io with timestamped notes, every cut clears a Project Manager QC pass.\")"))
+    story.append(P("If a sentence in the solution could be said by any video vendor, cut it. \"We have dedicated editors and fast drafts\" describes 50 competitors. \"The editor was catching brand drift by video 3\" describes Viral."))
 
     # ---- Funnel A Library ----
     story.append(H("Trigger &rarr; Pain &rarr; Solution Library &mdash; Funnel A"))
     story.append(P("<b>Buyer:</b> Sierra (mid-market marketing manager) + Lindsey (growth marketer at funded startup). <b>Case study to cite:</b> Self Financial (Sierra archetype) for marketing managers; Gainbridge (Lindsey archetype) for growth marketers."))
     funnel_a_lib = [
-        ["Signal", "Subject", "Trigger", "Pain", "Solution"],
-        ["<b>B1</b> Job posting", "<font face='Courier'>editor hire</font>",
+        ["Signal", "Subject", "Trigger", "Pain", "Solution (named workflow + outcome)"],
+        ["<b>B1</b> Job posting", "<font face='Courier'>before you hire</font>",
          "\"Saw [Company] is hiring a Video Editor.\"",
          "\"Most of our clients came to us right after a freelancer ghosted before a launch or a quarterly review. The math on hiring full-time usually doesn't survive a slow quarter either.\"",
-         "\"Self Financial runs their video through our pod. One dedicated editor brand-trained before the first project, first drafts in 24 hours, Slack response inside the hour Mon to Fri. Unlimited revisions on the first batch.\""],
-        ["<b>B1.5</b> Freelancer ghosting", "<font face='Courier'>freelancer gap</font>",
+         "\"Self Financial runs their video through our pod. The editor learned the brand from the kit handoff and was catching brand drift by video 3. Drafts back in 24 hours through Frame.io with timestamped notes, every cut clears a Project Manager QC pass before it ships.\""],
+        ["<b>B1.5</b> Freelancer ghosting", "<font face='Courier'>your freelancer gap</font>",
          "\"Saw [Freelancer] just listed themselves as open to work after working with [Company].\"",
          "\"Almost every team that comes to us starts with a freelancer who ghosted right before a launch. The pattern is consistent enough we built the model around it.\"",
-         "\"Self Financial runs their video through our pod. One dedicated editor, brand-trained before video one, first drafts in 24 hours. No ticket portal, no edit lottery.\""],
-        ["<b>B2</b> New marketing leader", "<font face='Courier'>new role start</font>",
+         "\"Self Financial runs their video through our pod. After the brand-training week, the editor caught a brand-color misuse their last freelancer had shipped twice. Drafts back in 24 hours through Frame.io, Slack inside the hour, no ticket portal.\""],
+        ["<b>B2</b> New marketing leader", "<font face='Courier'>first 90 days</font>",
          "\"Congrats on the [Role] start at [Company].\"",
          "\"First 90 days for most marketing leaders means an audit of the content stack while the calendar keeps moving. The brief intake usually gets sloppy and video falls behind first.\"",
-         "\"Self Financial runs their content through our pod for exactly this. One dedicated editor brand-trained before the first project, first drafts in 24 hours, Slack response inside the hour. The audit runs in parallel and the cadence holds.\""],
-        ["<b>B3</b> Underutilized long-form", "<font face='Courier'>your [topic] interview</font>",
-         "\"I saw [Company]'s recent [Topic] interview on the brand channel. [X] minutes of long-form.\"",
+         "\"Self Financial runs their content production through our pod for exactly this. Brand kit captured on call one, locked into a templates library the editor pulls from. By video 3, the editor was catching brand drift before their marketing lead saw it. First drafts back in 24 hours.\""],
+        ["<b>B3</b> Underutilized long-form", "<font face='Courier'>your [topic], untouched</font>",
+         "\"I saw [Company]'s recent [Topic] interview on the brand channel. [X] minutes of long-form sitting on YouTube.\"",
          "\"Most teams sit on long-form like this for weeks before short-form ships, because the freelancer rotation keeps starting over with every new brief.\"",
-         "\"Self Financial runs their repurposing through our pod. One long-form becomes 5 to 10 branded short-form pieces in 5 business days. Captions, brand kit, platform-specific aspect ratios all built in.\""],
-        ["<b>B6</b> Funding (growth mkter)", "<font face='Courier'>series [x] content</font>",
+         "\"Self Financial sends one long-form a month. We ship 8 to 10 branded short-form cuts in 5 business days. Captions, brand kit, and platform-specific aspect ratios built into the workflow. Every cut clears a PM QC pass before it goes back.\""],
+        ["<b>B6</b> Funding (growth mkter)", "<font face='Courier'>after the raise</font>",
          "\"Congrats on [Company]'s Series [X] last month.\"",
          "\"Growth-stage rounds usually mean creative supply becomes the bottleneck. Sales enablement, paid ads, recruiting content, and investor updates all need video at once, and hiring takes too long.\"",
-         "\"Gainbridge, the growth team inside Group 1001 with about 160 billion in assets under management, runs their paid-creative testing through our pod. One dedicated editor, first drafts in 24 hours, ships new ad variants twice a week.\""],
+         "\"Gainbridge, the growth team inside Group 1001 with about 160 billion in AUM, runs their paid-creative testing through our pod. New ad variants ship twice a week. Hook and retention feedback baked into every test, so the editor knows what scored before shipping the next.\""],
     ]
     story.append(make_table(funnel_a_lib, [0.85*inch, 1.05*inch, 1.4*inch, 1.6*inch, 1.8*inch]))
 
@@ -275,23 +297,23 @@ Worth a look for [Company]?"""
     story.append(H("Trigger &rarr; Pain &rarr; Solution Library &mdash; Funnel B"))
     story.append(P("<b>Buyer:</b> Daniel (agency CEO/Founder, 30-150 staff, $5M-$50M revenue). <b>Case study to cite:</b> Clever Digital Marketing (Daniel archetype, ~$10M, ~80 staff, Canadian agency, white-label model)."))
     funnel_b_lib = [
-        ["Signal", "Subject", "Trigger", "Pain", "Solution"],
-        ["<b>B1</b> Agency editor hire", "<font face='Courier'>editor hire</font>",
+        ["Signal", "Subject", "Trigger", "Pain", "Solution (named workflow + outcome)"],
+        ["<b>B1</b> Agency editor hire", "<font face='Courier'>before the hire</font>",
          "\"Saw [Agency] is hiring a Senior Video Editor.\"",
          "\"Most agencies that come to us tried to hire their way out and the math broke. A full-time editor is dead weight on slow weeks, and the brand calendar doesn't pause while you ramp.\"",
-         "\"Clever Digital Marketing, a Canadian agency running about 80 staff, runs our team behind their accounts white-label. Same editor every week, same-day first drafts on Full-Time, Slack response inside the hour. The cuts go out under their brand.\""],
-        ["<b>B5</b> New client win", "<font face='Courier'>[client] win</font>",
+         "\"Clever Digital Marketing, a Canadian agency running about 80 staff, runs our team behind their accounts white-label. The editor sits inside each client's Slack channel under their brand. Same-day first drafts on Full-Time, revisions tracked in Frame.io, every cut clears the account lead's QC pass before going client-facing.\""],
+        ["<b>B5</b> New client win", "<font face='Courier'>after the win</font>",
          "\"Saw [Agency] just announced the [Client] win.\"",
          "\"New accounts pile onto an in-house editing team already at capacity. The existing accounts start asking pointed questions about turnaround.\"",
-         "\"Clever Digital Marketing runs our team behind five of their accounts white-label. Same-day first drafts, dedicated editor per account, Slack response inside the hour. Their renewal book got cleaner. The clients never knew.\""],
-        ["<b>B7</b> Agency RFP for video", "<font face='Courier'>video rfp</font>",
+         "\"Clever Digital Marketing runs our team behind five of their accounts white-label. Each editor learned the client's brand from the kit handoff and was catching drift by the third project. Same-day first drafts, dedicated editor per account, Slack inside the hour. Their renewal book got cleaner. The clients never knew.\""],
+        ["<b>B7</b> Agency RFP for video", "<font face='Courier'>your video rfp</font>",
          "\"Saw [Agency]'s RFP for video editing partners.\"",
          "\"Most agencies post the RFP because the current vendor's quality dropped when volume scaled. The brand stopped looking like the brand and the client noticed.\"",
-         "\"Clever Digital Marketing runs our team white-label behind their accounts. One dedicated editor per account, same-day first drafts on Full-Time, no rotation, no quality dip when volume spikes.\""],
-        ["<b>B8</b> Q4 renewal cycle", "<font face='Courier'>renewal stack</font>",
+         "\"Clever Digital Marketing runs our team white-label behind their accounts. One dedicated editor per account, brand kit captured on the first kit handoff. Same-day first drafts on Full-Time, no rotation, no quality dip when volume spikes. Every cut clears the account lead's QC pass before going client-facing.\""],
+        ["<b>B8</b> Q4 renewal cycle", "<font face='Courier'>your q4 book</font>",
          "\"Q4 renewal cycle approaching for [Agency].\"",
          "\"Most agencies hit the renewal cycle with one or two accounts already flagging video as a churn risk. The vendor scaled the team through a pool and the brand drifted.\"",
-         "\"Clever Digital Marketing runs our team behind five of their accounts white-label. Dedicated editor per account, same-day first drafts on Full-Time, no surprises before quarterly business reviews.\""],
+         "\"Clever Digital Marketing runs our team behind five of their accounts white-label. Dedicated editor per account, brand kit handed off on call one. By the third project, the editor was catching brand drift before the account lead saw it. Same-day first drafts on Full-Time, no surprises before quarterly business reviews.\""],
     ]
     story.append(make_table(funnel_b_lib, [0.85*inch, 1.05*inch, 1.4*inch, 1.6*inch, 1.8*inch]))
 
@@ -299,19 +321,19 @@ Worth a look for [Company]?"""
     story.append(H("Trigger &rarr; Pain &rarr; Solution &mdash; Opportunistic"))
     story.append(P("<b>Buyers:</b> Brittany (enterprise pharma marketing director) + Adam (B2B founder, established pro services or SaaS). <b>Case studies:</b> Ontada / Janssen / J&amp;J for pharma; Asset Map for founder-led pro services / SaaS."))
     opp_lib = [
-        ["Signal", "Subject", "Trigger", "Pain", "Solution"],
-        ["<b>A1</b> FDA approval (Brittany)", "<font face='Courier'>approval launch</font>",
+        ["Signal", "Subject", "Trigger", "Pain", "Solution (named workflow + outcome)"],
+        ["<b>A1</b> FDA approval (Brittany)", "<font face='Courier'>after the approval</font>",
          "\"Congrats on the FDA approval at [Company] last month.\"",
          "\"Most enterprise launches need approval-friendly volume that survives legal review on the first pass. Most vendors don't survive enterprise governance.\"",
-         "\"Ontada, the McKesson healthcare-data subsidiary, runs their HCP and clinical-trial cuts through our pod. The editor learns the compliance pattern by the third project. Submissions clear legal on the first pass more often than not. A six-week cycle shrinks to two.\""],
-        ["<b>A3</b> Medical congress (Brittany)", "<font face='Courier'>[conference] content</font>",
+         "\"Ontada, the McKesson healthcare-data subsidiary, runs their HCP and clinical-trial cuts through our pod. By the third project, the editor learned the compliance pattern: how their legal team flags claims, how their brand team catches color and font misuse, what triggers a redaction. A six-week cycle shrinks to two. Submissions clear legal first-pass more often than not.\""],
+        ["<b>A3</b> Medical congress (Brittany)", "<font face='Courier'>before [conference]</font>",
          "\"Saw [Company]'s team is presenting at [Conference] next month.\"",
          "\"Congress content has a hard deadline and three audiences: HCP attendees, KOLs, and the field team. Most brand teams over-spec the deliverable count and under-deliver on quality.\"",
-         "\"Janssen runs their congress content through our pod. One editor across all three audiences, brand voice stays consistent from teaser to recap, regulatory QA baked in.\""],
-        ["<b>B5</b> Founder-led growth (Adam)", "<font face='Courier'>[company] next phase</font>",
+         "\"Janssen runs their congress content through our pod. One editor across the launch teaser, day-of clips, and recap series so the brand voice stays the same across all three. Regulatory QA built into the editor's workflow, every cut cleared before it goes to legal.\""],
+        ["<b>B5</b> Founder-led growth (Adam)", "<font face='Courier'>after the milestone</font>",
          "\"Saw [Company]'s [milestone] announcement.\"",
          "\"Founder-led marketing functions at this stage usually hit a wall where the junior marketing lead is drowning and the strategic conversations stop happening because everyone's executing.\"",
-         "\"Asset Map has been a Viral client since 2017. Their marketing lead has a partner who thinks about positioning, platform strategy, and what to ship next, not just an editor who takes orders.\""],
+         "\"Asset Map has been a Viral client since 2017. Their marketing lead has a partner who thinks about positioning, platform strategy, and what to ship next, not just an editor who takes orders. We were producing for them at Series A. Eight years later we're still producing.\""],
     ]
     story.append(make_table(opp_lib, [0.95*inch, 1.05*inch, 1.4*inch, 1.5*inch, 1.8*inch]))
 
@@ -375,7 +397,7 @@ existing [Company] long-forms? (on us)"""
     story.append(H2("Prospect 1 &mdash; Maya Reyes, Senior Marketing Manager, Step"))
     story.append(P("<b>Funnel A &middot; Signal B1 (job posting)</b>"))
     story.append(H3("Email 1"))
-    story.append(C("""Subject: editor hire
+    story.append(C("""Subject: before you hire
 
 Hi Maya, saw Step is hiring a Video Editor. Most of our
 clients came to us right after a freelancer ghosted
@@ -383,15 +405,15 @@ before a launch or a quarterly review. The math on
 hiring full-time usually doesn't survive a slow quarter
 either.
 
-Self Financial runs their video through our pod. One
-dedicated editor brand-trained before the first
-project, first drafts in 24 hours, Slack response
-inside the hour Mon to Fri. Unlimited revisions on the
-first batch until the baseline is right.
+Self Financial runs their video through our pod. The
+editor learned the brand from the kit handoff and was
+catching brand drift by video 3. Drafts back in 24
+hours through Frame.io with timestamped notes, every
+cut clears a Project Manager QC pass before it ships.
 
 Worth a look for Step?"""))
     story.append(H3("Email 2"))
-    story.append(C("""Subject: re: editor hire
+    story.append(C("""Subject: re: before you hire
 
 Almost every team we work with came to us after a
 freelancer ghosted mid-campaign. The pattern is
@@ -410,7 +432,7 @@ existing Step long-forms? (on us)"""))
     story.append(H2("Prospect 2 &mdash; Tom Diaz, Head of Growth, Mercury"))
     story.append(P("<b>Funnel A &middot; Signal B6 (Series C funding)</b>"))
     story.append(H3("Email 1"))
-    story.append(C("""Subject: series c content
+    story.append(C("""Subject: after the raise
 
 Hi Tom, congrats on Mercury's Series C last quarter.
 The 90 days after a round usually mean creative supply
@@ -419,14 +441,15 @@ recruiting content, and investor updates all need video
 at once, and hiring takes too long.
 
 Gainbridge, the growth team inside Group 1001 with
-about 160 billion in assets under management, runs
-their paid-creative testing through our pod. One
-dedicated editor, first drafts in 24 hours, ships new
-ad variants twice a week.
+about 160 billion in AUM, runs their paid-creative
+testing through our pod. New ad variants ship twice a
+week. Hook and retention feedback baked into every
+test, so the editor knows what scored before shipping
+the next.
 
 Open to a 15-minute diagnostic?"""))
     story.append(H3("Email 2"))
-    story.append(C("""Subject: re: series c content
+    story.append(C("""Subject: re: after the raise
 
 Most growth teams that come to us have run paid for a
 quarter on a 14-day refresh cycle that should have been
@@ -445,7 +468,7 @@ existing Mercury long-forms? (on us)"""))
     story.append(H2("Prospect 3 &mdash; Sarah Chen, CEO, Anomaly"))
     story.append(P("<b>Funnel B &middot; Signal B1 (agency editor hire)</b>"))
     story.append(H3("Email 1"))
-    story.append(C("""Subject: editor hire
+    story.append(C("""Subject: before the hire
 
 Hi Sarah, saw Anomaly is hiring a Senior Video Editor.
 Most agencies that come to us tried to hire their way
@@ -455,13 +478,14 @@ pause while you ramp.
 
 Clever Digital Marketing, a Canadian agency running
 about 80 staff, runs our team behind their accounts
-white-label. Same editor every week, same-day first
-drafts on Full-Time, Slack response inside the hour.
-The cuts go out under their brand.
+white-label. The editor sits inside each client's Slack
+under their brand. Same-day first drafts on Full-Time,
+revisions in Frame.io, every cut clears the account
+lead's QC pass before going client-facing.
 
 Worth a look for Anomaly?"""))
     story.append(H3("Email 2"))
-    story.append(C("""Subject: re: editor hire
+    story.append(C("""Subject: re: before the hire
 
 Most agencies come to us after a vendor that survived
 strategy meetings but missed the client deliverable
@@ -480,7 +504,7 @@ existing client long-forms? (on us)"""))
     story.append(H2("Prospect 4 &mdash; Jessica Park, VP Marketing, Cala Health"))
     story.append(P("<b>Funnel A &middot; Signal B2 (new marketing leader)</b>"))
     story.append(H3("Email 1"))
-    story.append(C("""Subject: new vp start
+    story.append(C("""Subject: first 90 days
 
 Hi Jessica, congrats on the VP Marketing start at Cala
 Health. First 90 days for most marketing leaders means
@@ -489,15 +513,15 @@ moving. The brief intake usually gets sloppy and video
 falls behind first.
 
 Self Financial runs their content production through
-our pod for exactly this. One dedicated editor
-brand-trained before the first project, first drafts in
-24 hours, Slack response inside the hour Mon to Fri.
-
-The audit runs in parallel. The cadence holds.
+our pod for exactly this. Brand kit captured on call
+one, locked into a templates library the editor pulls
+from. By video 3, the editor was catching brand drift
+before their marketing lead saw it. First drafts back
+in 24 hours.
 
 Worth a look for Cala?"""))
     story.append(H3("Email 2"))
-    story.append(C("""Subject: re: new vp start
+    story.append(C("""Subject: re: first 90 days
 
 The most common story we hear is great first month,
 quality slip by month four. Usually that means the
@@ -517,7 +541,7 @@ existing Cala Health long-forms? (on us)"""))
     story.append(H2("Prospect 5 &mdash; Rachel Park, Sr. Marketing Director, Eli Lilly Oncology"))
     story.append(P("<b>Opportunistic &middot; Signal A1 (FDA approval)</b>"))
     story.append(H3("Email 1"))
-    story.append(C("""Subject: approval launch
+    story.append(C("""Subject: after the approval
 
 Hi Rachel, congrats on the FDA approval at Lilly
 Oncology last month. Most enterprise launches need
@@ -526,14 +550,15 @@ the first pass. Most vendors don't survive enterprise
 governance.
 
 Ontada, the McKesson healthcare-data subsidiary, runs
-their HCP and clinical-trial cuts through our pod. The
-editor learns the compliance pattern by the third
-project. Submissions clear legal on the first pass more
-often than not. A six-week cycle shrinks to two.
+their HCP and clinical-trial cuts through our pod. By
+the third project, the editor learned the compliance
+pattern: how their legal team flags claims, how their
+brand team catches color and font misuse, what triggers
+a redaction. A six-week cycle shrinks to two.
 
 Open to a 15-minute diagnostic?"""))
     story.append(H3("Email 2"))
-    story.append(C("""Subject: re: approval launch
+    story.append(C("""Subject: re: after the approval
 
 Enterprise teams usually come to us after a vendor
 couldn't survive legal and brand-compliance review.
@@ -552,23 +577,26 @@ existing Lilly long-forms? (on us)"""))
     story.append(H2("Prospect 6 &mdash; Marcus Webb, COO, Sage Communications"))
     story.append(P("<b>Funnel B &middot; Signal B5 + B8 (new client win + Q4 renewal cycle)</b>"))
     story.append(H3("Email 1"))
-    story.append(C("""Subject: renewal stack
+    story.append(C("""Subject: your q4 book
 
 Hi Marcus, saw Sage just announced the new client win.
 Most agencies hitting Q4 with new accounts and an
 in-house team already at capacity see existing clients
 start asking pointed questions about turnaround.
 
-Clever Digital Marketing, a Canadian agency running
-about 80 staff, runs our team behind five of their
-accounts white-label. Same-day first drafts, dedicated
-editor per account, Slack response inside the hour.
+Clever Digital Marketing runs our team behind five of
+their accounts white-label. The editor learned each
+client's brand from the kit handoff and was catching
+brand drift by the third project. Same-day first drafts
+on Full-Time, Slack response inside the hour, every cut
+clears the account lead's QC pass before going
+client-facing.
 
 Their renewal book got cleaner. Clients never knew.
 
 Worth a look for Sage?"""))
     story.append(H3("Email 2"))
-    story.append(C("""Subject: re: renewal stack
+    story.append(C("""Subject: re: your q4 book
 
 Most agencies that come to us have a renewal book with
 one or two accounts flagging video as a churn risk. The
@@ -584,22 +612,48 @@ existing client long-forms? (on us)"""))
     story.append(PageBreak())
 
     # ---- VI Differentiator Library ----
-    story.append(H("VI Differentiator Library"))
-    story.append(P("The REAL differentiators from the Discovery Questionnaire. Use them verbatim in Email 1's solution line. Match to context."))
-    diff_rows = [
+    story.append(H("VI Differentiator Library (rank-ordered by specificity)"))
+    story.append(P("Two tiers: <b>specific workflow elements</b> (best &mdash; they sound like nobody else's marketing) vs <b>generic claims</b> (use only if a specific one doesn't fit)."))
+    story.append(H2("Tier 1 &mdash; Specific workflow + measurable outcomes (USE THESE FIRST)"))
+    diff_rows_t1 = [
         ["Differentiator", "When to use"],
-        ["\"One dedicated editor, brand-trained before the first project\"", "Default &mdash; works in every signal"],
-        ["\"First drafts in 24 hours\" (Funnel A) / \"Same-day first drafts\" (Funnel B)", "Speed/responsiveness pain"],
-        ["\"Slack response inside the hour Mon to Fri 9 to 5 EST\"", "Communication-collapse pain (post-freelancer-ghost)"],
-        ["\"Unlimited revisions on the first batch until the baseline is right\"", "Quality-fear pain"],
-        ["\"Same editor every week. No pool, no rotation.\"", "Brand-drift pain"],
-        ["\"The editor learns the compliance pattern by the third project\"", "Pharma / regulated environments"],
-        ["\"No ticket portal, no edit lottery, no autoresponder\"", "Vendor-collapse pain"],
-        ["\"The cuts go out under your brand. The client never knows we exist.\"", "Funnel B (agency white-label)"],
-        ["\"Submissions clear legal on the first pass more often than not\"", "Enterprise pharma"],
-        ["\"Strategic input on hook, retention, and platform fit, not just execution\"", "Adam (founder) / mature buyers"],
+        ["<b>\"The editor learned the brand from the kit handoff and was catching brand drift by video 3\"</b>",
+         "Default &mdash; works in every signal. Most specific outcome we have."],
+        ["<b>\"Brand kit captured on call one, locked into a templates library the editor pulls from\"</b>",
+         "New marketing leader (B2) or new-account-onboarding signals"],
+        ["<b>\"Drafts back in 24 hours through Frame.io with timestamped notes\"</b> (Funnel A) / <b>\"Same-day drafts on Full-Time through Frame.io\"</b> (Funnel B)",
+         "Speed pain + names the tool"],
+        ["<b>\"Every cut clears a Project Manager QC pass before it ships\"</b>",
+         "Quality-fear pain. Names the QA gate."],
+        ["<b>\"The editor sits inside the client's Slack channel under their brand\"</b> (Funnel B)",
+         "Agency white-label signals"],
+        ["<b>\"After the brand-training week, the editor caught a brand-color misuse their last freelancer had shipped twice\"</b>",
+         "Post-freelancer-ghost signals"],
+        ["<b>\"By the third project, the editor learned the compliance pattern: how legal flags claims, how brand catches color and font misuse, what triggers a redaction\"</b>",
+         "Pharma / regulated environments"],
+        ["<b>\"A six-week cycle shrinks to two. Submissions clear legal first-pass more often than not\"</b>",
+         "Enterprise pharma (Brittany)"],
+        ["<b>\"New ad variants ship twice a week. Hook and retention feedback baked into every test, so the editor knows what scored before shipping the next\"</b>",
+         "Growth marketer (Lindsey) / paid creative pain"],
+        ["<b>\"One editor across the launch teaser, day-of clips, and recap series so the brand voice stays the same across the set\"</b>",
+         "Sprint deliverables (launch, congress, campaign)"],
+        ["<b>\"The cuts go out under your brand. The client never knows we exist.\"</b>",
+         "Funnel B white-label"],
+        ["<b>\"We were producing for them at Series A. Eight years later we're still producing.\"</b>",
+         "Founder (Adam) &mdash; long-LTV proof"],
     ]
-    story.append(make_table(diff_rows, [3.3*inch, 3.4*inch]))
+    story.append(make_table(diff_rows_t1, [3.5*inch, 3.2*inch]))
+
+    story.append(H2("Tier 2 &mdash; Generic claims (use ONLY if no Tier 1 fits)"))
+    diff_rows_t2 = [
+        ["Differentiator", "When to use"],
+        ["\"One dedicated editor, not a rotating pool\"", "Default fallback"],
+        ["\"Slack response inside the hour Mon to Fri 9 to 5 EST\"", "Communication-collapse pain"],
+        ["\"Unlimited revisions on the first batch until the baseline is right\"", "Quality-fear pain"],
+        ["\"No ticket portal, no edit lottery, no autoresponder\"", "Vendor-collapse pain"],
+    ]
+    story.append(make_table(diff_rows_t2, [3.5*inch, 3.2*inch]))
+    story.append(P("<b>Rule:</b> If a sentence in the solution could be said by any subscription editing service, it's Tier 2 and probably needs to be replaced with a Tier 1 specific. Strong solutions name the workflow, the tool, the outcome, or all three."))
 
     # ---- VOC Language ----
     story.append(H("VOC Language Library (prospect's own words)"))

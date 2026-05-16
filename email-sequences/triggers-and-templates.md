@@ -91,12 +91,35 @@ Hi [First Name],
 Worth a look for [Company]?
 ```
 
-**Word target:** 70-100 words. **No em dashes. No exclamation marks. No spam words. No bracket placeholders in final render. No apologetic PS. No in-body taglines. No sign-off, no "Cheers," no sender name — email ends at the CTA. Signature handled by EmailBison `{SENDER_EMAIL_SIGNATURE}` system variable.**
+**Word target:** 70-110 words. **No em dashes. No exclamation marks. No spam words. No bracket placeholders in final render. No apologetic PS. No in-body taglines. No sign-off, no "Cheers," no sender name — email ends at the CTA. Signature handled by EmailBison `{SENDER_EMAIL_SIGNATURE}` system variable.**
 
-The CTA can swap depending on intent level:
+### Subject line pattern (click-bait, still on-brand)
+
+2-4 words, lowercase, **curiosity-driven**. The strongest subjects fall into 4 buckets:
+
+| Pattern | Examples |
+|---|---|
+| **Before [their action]** — implies an alternative they haven't considered | `before you hire` · `before the rfp closes` (drop urgency-y "closes") → `before the hire` |
+| **After [their event]** — implies "and now what?" | `after the raise` · `after the approval` · `after the win` · `after the announcement` |
+| **Their [thing], [twist]** — possessive + intriguing modifier | `your [topic], untouched` · `your q4 book` · `your freelancer gap` · `linkedin without video` |
+| **Time-bound reference** — specific window the prospect is in | `first 90 days` · `six week sprint` |
+
+Avoid: urgency ("now," "closing"), hype ("revolutionary," "game-changing"), and generic ("quick question," "video editing services").
+
+### The CTA swaps depending on intent
 
 - **Default:** "Worth a look for [Company]?"
 - **High-commitment signal (FDA approval, funding round):** "Open to a 15-minute diagnostic?" — matches VI's Doctor Frame sales method
+
+### Strong Solution Pattern (the part most cold emails get wrong)
+
+A weak solution is a feature list ("dedicated editor, fast drafts, good QA"). A strong solution names a workflow, a tool, and a measurable outcome. Three components, in order:
+
+1. **Named case-study client + how they specifically use VI** — output volume, channel, deliverable type. ("Self Financial runs 12 videos a month through our pod.")
+2. **A specific workflow step OR a measurable outcome** — name the tool, the handoff, or the moment something becomes true. ("Their editor learned the brand from the kit handoff and was catching brand drift by video 3.")
+3. **SLA + tool + QA gate** — name the time, the tool, and the quality step. ("Drafts back in 24 hours through Frame.io with timestamped notes, every cut clears a Project Manager QC pass.")
+
+If a sentence in the solution could be said by any video vendor, cut it. The line "we have dedicated editors and fast drafts" describes 50 competitors. The line "the editor was catching brand drift by video 3" describes Viral.
 
 ---
 
@@ -106,38 +129,38 @@ The CTA can swap depending on intent level:
 
 Case study to cite: **Self Financial** (Sierra archetype, B2C fintech mid-market) for marketing managers · **Gainbridge** (Lindsey archetype, growth marketer at funded startup) for growth marketers.
 
-| Signal | Subject | Trigger | Pain | Solution |
+| Signal | Subject | Trigger | Pain | Solution (named workflow + measurable outcome) |
 |---|---|---|---|---|
-| **B1** Job posting (editor) | `editor hire` | "Saw [Company] is hiring a Video Editor." | "Most of our clients came to us right after a freelancer ghosted before a launch or a quarterly review. The math on hiring full-time usually doesn't survive a slow quarter either." | "Self Financial runs their video through our pod. One dedicated editor brand-trained before the first project, first drafts in 24 hours, Slack response inside the hour Mon to Fri. Unlimited revisions on the first batch until the baseline is right." |
-| **B1.5** Freelancer ghosting | `freelancer gap` | "Saw [Freelancer Name] just listed themselves as open to work after working with [Company]." | "Almost every team that comes to us starts with a freelancer who ghosted right before a launch. The pattern is consistent enough we built the model around it." | "Self Financial runs their video through our pod. One dedicated editor, brand-trained before video one, first drafts in 24 hours. Slack response inside the hour, no ticket portal, no edit lottery." |
-| **B2** New marketing leader | `new role start` | "Congrats on the [Role] start at [Company]." | "First 90 days for most marketing leaders means an audit of the content stack while the calendar keeps moving. The brief intake usually gets sloppy and video falls behind first." | "Self Financial runs their content through our pod for exactly this. One dedicated editor brand-trained before the first project, first drafts in 24 hours, Slack response inside the hour. The audit runs in parallel and the cadence holds." |
-| **B3** Underutilized long-form | `your [topic] interview` | "I saw [Company]'s recent [Topic] interview on the brand channel. [X] minutes of long-form." | "Most teams sit on long-form like this for weeks before short-form ships, because the freelancer rotation keeps starting over with every new brief." | "Self Financial runs their repurposing through our pod. One long-form becomes 5 to 10 branded short-form pieces in 5 business days. Captions, brand kit, platform-specific aspect ratios all built into the workflow." |
-| **B4** Image-heavy LinkedIn | `[company] video` | "Saw [Company] is posting [X] times a week on LinkedIn, mostly carousels and graphics." | "Most teams want to add video but the production lift kills it before week three. The freelancer the team trusted last quarter is usually the bottleneck." | "Self Financial runs their video layer through our pod on top of their existing posting cadence. One dedicated editor, brand kit captured on the first call, edited cuts ship weekly." |
-| **B5** Growth announcement | `[announcement]` | "Saw [Company]'s [Partnership / Office / Client / Launch] announcement." | "Announcements like that usually trigger a content sprint inside of a team that's already underwater. The CMO walks into the standup asking why the recap isn't out yet." | "Self Financial runs sprint deliverables through our pod when their in-house team is at capacity. Same dedicated editor every week, first drafts in 24 hours, no ramp time." |
-| **B6** Funding (growth mkter) | `series [x] content` | "Congrats on [Company]'s Series [X] last month." | "Growth-stage rounds usually mean creative supply becomes the bottleneck. Sales enablement, paid ads, recruiting content, and investor updates all need video at once, and hiring takes too long." | "Gainbridge, the growth team inside Group 1001 with about 160 billion in assets under management, runs their paid-creative testing through our pod. One dedicated editor, first drafts in 24 hours, ships new ad variants twice a week." |
-| **B9** LinkedIn activity (fallback) | `your [topic] post` | "Saw your recent LinkedIn post on [Topic]." | "Posts that land usually die after 7 days on the feed. Republishing as branded short-form extends the lifespan, but most teams don't have the production capacity to do it consistently." | "Self Financial runs their LinkedIn-to-video repurposing through our pod. Each post becomes a 60-second branded video in days, captions and brand kit baked in." |
+| **B1** Job posting (editor) | `before you hire` | "Saw [Company] is hiring a Video Editor." | "Most of our clients came to us right after a freelancer ghosted before a launch or a quarterly review. The math on hiring full-time usually doesn't survive a slow quarter either." | "Self Financial runs their video through our pod. The editor learned the brand from the kit handoff and was catching brand drift by video 3. Drafts back in 24 hours through Frame.io with timestamped notes, every cut clears a Project Manager QC pass before it ships." |
+| **B1.5** Freelancer ghosting | `your freelancer gap` | "Saw [Freelancer Name] just listed themselves as open to work after working with [Company]." | "Almost every team that comes to us starts with a freelancer who ghosted right before a launch. The pattern is consistent enough we built the model around it." | "Self Financial runs their video through our pod. After the brand-training week, the editor caught a brand-color misuse their last freelancer had shipped twice. Drafts back in 24 hours through Frame.io, Slack response inside the hour Mon to Fri 9 to 5 EST, no ticket portal." |
+| **B2** New marketing leader | `first 90 days` | "Congrats on the [Role] start at [Company]." | "First 90 days for most marketing leaders means an audit of the content stack while the calendar keeps moving. The brief intake usually gets sloppy and video falls behind first." | "Self Financial runs their content production through our pod for exactly this. Brand kit captured on call one, locked into a templates library the editor pulls from. By video 3, the editor was catching brand drift before their marketing lead saw it. First drafts back in 24 hours." |
+| **B3** Underutilized long-form | `your [topic], untouched` | "I saw [Company]'s recent [Topic] interview on the brand channel. [X] minutes of long-form sitting on YouTube." | "Most teams sit on long-form like this for weeks before short-form ships, because the freelancer rotation keeps starting over with every new brief." | "Self Financial sends one long-form a month. We ship 8 to 10 branded short-form cuts in 5 business days. Captions, brand kit, and platform-specific aspect ratios built into the workflow. Every cut clears a Project Manager QC pass before it goes back." |
+| **B4** Image-heavy LinkedIn | `linkedin without video` | "Saw [Company] is posting [X] times a week on LinkedIn, mostly carousels and graphics." | "Most teams want to add video but the production lift kills it before week three. The freelancer the team trusted last quarter is usually the bottleneck." | "Self Financial runs the video layer on top of their LinkedIn posting cadence. Brand kit captured on call one, locked into a templates library the editor pulls from. By video 3, the cuts looked like their team made them in-house. First drafts back in 24 hours, edited cuts ship weekly." |
+| **B5** Growth announcement | `after the announcement` | "Saw [Company]'s [Partnership / Office / Client / Launch] announcement." | "Announcements like that usually trigger a content sprint inside a team that's already underwater. The CMO walks into the standup asking why the recap isn't out yet." | "Self Financial runs sprint deliverables through our pod when their in-house team is at capacity. One editor across the recap, launch cuts, and internal comms so the voice stays the same across the set. First drafts back in 24 hours, every cut clears a PM QC pass." |
+| **B6** Funding (growth mkter) | `after the raise` | "Congrats on [Company]'s Series [X] last month." | "Growth-stage rounds usually mean creative supply becomes the bottleneck. Sales enablement, paid ads, recruiting content, and investor updates all need video at once, and hiring takes too long." | "Gainbridge, the growth team inside Group 1001 with about 160 billion in AUM, runs their paid-creative testing through our pod. New ad variants ship twice a week. Hook and retention feedback baked into every test, so the editor knows what scored before shipping the next." |
+| **B9** LinkedIn activity (fallback) | `your [topic] post` | "Saw your recent LinkedIn post on [Topic]." | "Posts that land usually die after 7 days on the feed. Republishing as branded short-form extends the lifespan, but most teams don't have the production capacity to do it consistently." | "Self Financial runs LinkedIn-to-video repurposing through our pod. Each post becomes a branded 60-second video in 5 business days. Captions, voiceover, brand kit baked in. Every cut clears a PM QC pass before it goes back." |
 
 ### Funnel B — Agency CEO (Daniel)
 
 Case study to cite: **Clever Digital Marketing** (Daniel archetype, ~$10M, ~80 staff, Canadian agency, white-label model).
 
-| Signal | Subject | Trigger | Pain | Solution |
+| Signal | Subject | Trigger | Pain | Solution (named workflow + measurable outcome) |
 |---|---|---|---|---|
-| **B1** Job posting (editor) | `editor hire` | "Saw [Agency] is hiring a Senior Video Editor." | "Most agencies that come to us tried to hire their way out and the math broke. A full-time editor is dead weight on slow weeks, and the brand calendar doesn't pause while you ramp." | "Clever Digital Marketing, a Canadian agency running about 80 staff, runs our team behind their accounts white-label. Same editor every week, same-day first drafts on Full-Time, Slack response inside the hour. The cuts go out under their brand." |
-| **B5** New client win | `[client] win` | "Saw [Agency] just announced the [Client] win." | "New accounts pile onto an in-house editing team that's already at capacity. The existing accounts start asking pointed questions about turnaround." | "Clever Digital Marketing runs our team behind five of their accounts white-label. Same-day first drafts, dedicated editor per account, Slack response inside the hour. Their renewal book got cleaner. The clients never knew." |
-| **B7** Agency RFP for video | `video rfp` | "Saw [Agency]'s RFP for video editing partners." | "Most agencies post the RFP because the current vendor's quality dropped when volume scaled. The brand stopped looking like the brand, and the client noticed." | "Clever Digital Marketing runs our team white-label behind their accounts. One dedicated editor per account, same-day first drafts on Full-Time, no rotation, no quality dip when volume spikes." |
-| **B8** Q4 renewal cycle | `renewal stack` | "Q4 renewal cycle approaching for [Agency]." | "Most agencies hit the renewal cycle with one or two accounts already flagging video as a churn risk. The vendor scaled the team through a pool and the brand drifted." | "Clever Digital Marketing runs our team behind five of their accounts white-label. Dedicated editor per account, same-day first drafts on Full-Time, no surprises before quarterly business reviews." |
-| **B3** Underutilized long-form (agency client) | `[client] cuts` | "I saw [Agency]'s recent case-study film for [Client]. [X] minutes of long-form." | "Most agencies sit on long-form like this because cutting it for client-facing social, sales enablement, and partner-facing usually means re-briefing a freelancer who delivers off-brand by week three." | "Clever Digital Marketing runs their client repurposing through our pod white-label. One long-form becomes 5 to 10 branded short-form pieces in 5 business days. The cuts ship under the agency's brand, not ours." |
+| **B1** Job posting (editor) | `before the hire` | "Saw [Agency] is hiring a Senior Video Editor." | "Most agencies that come to us tried to hire their way out and the math broke. A full-time editor is dead weight on slow weeks, and the brand calendar doesn't pause while you ramp." | "Clever Digital Marketing, a Canadian agency running about 80 staff, runs our team behind their accounts white-label. The editor sits inside each client's Slack channel under their brand. Same-day first drafts on Full-Time, revisions tracked in Frame.io, every cut clears the account lead's QC pass before going client-facing." |
+| **B5** New client win | `after the win` | "Saw [Agency] just announced the [Client] win." | "New accounts pile onto an in-house editing team that's already at capacity. The existing accounts start asking pointed questions about turnaround." | "Clever Digital Marketing runs our team behind five of their accounts white-label. Each editor learned the client's brand from the kit handoff and was catching drift by the third project. Same-day first drafts, dedicated editor per account, Slack inside the hour. Their renewal book got cleaner. The clients never knew." |
+| **B7** Agency RFP for video | `your video rfp` | "Saw [Agency]'s RFP for video editing partners." | "Most agencies post the RFP because the current vendor's quality dropped when volume scaled. The brand stopped looking like the brand, and the client noticed." | "Clever Digital Marketing runs our team white-label behind their accounts. One dedicated editor per account, brand kit captured on the first kit handoff. Same-day first drafts on Full-Time, no rotation, no quality dip when volume spikes. Every cut clears the account lead's QC pass before going client-facing." |
+| **B8** Q4 renewal cycle | `your q4 book` | "Q4 renewal cycle approaching for [Agency]." | "Most agencies hit the renewal cycle with one or two accounts already flagging video as a churn risk. The vendor scaled the team through a pool and the brand drifted." | "Clever Digital Marketing runs our team behind five of their accounts white-label. Dedicated editor per account, brand kit handed off on call one. By the third project, the editor was catching brand drift before the account lead saw it. Same-day first drafts on Full-Time, no surprises before quarterly business reviews." |
+| **B3** Underutilized long-form (agency client) | `their footage, sliced` | "I saw [Agency]'s recent case-study film for [Client]. [X] minutes of long-form." | "Most agencies sit on long-form like this because cutting it for client-facing social, sales enablement, and partner-facing usually means re-briefing a freelancer who delivers off-brand by week three." | "Clever Digital Marketing runs client repurposing through our pod white-label. We take one client long-form and ship 8 to 10 branded short-form cuts in 5 business days. The cuts go out under the agency's brand. Every cut clears the account lead's QC pass before delivery." |
 
 ### Opportunistic — Enterprise pharma (Brittany) + B2B founder (Adam)
 
 Case studies: **Ontada / Janssen / Johnson & Johnson** for pharma · **Asset Map** for founder-led pro services / SaaS.
 
-| Signal | Subject | Trigger | Pain | Solution |
+| Signal | Subject | Trigger | Pain | Solution (named workflow + measurable outcome) |
 |---|---|---|---|---|
-| **A1** FDA approval (Brittany) | `approval launch` | "Congrats on the FDA approval at [Company] last month." | "Most enterprise launches need approval-friendly volume that survives legal review on the first pass. Most vendors don't survive enterprise governance." | "Ontada, the McKesson healthcare-data subsidiary, runs their HCP and clinical-trial cuts through our pod. The editor learns the compliance pattern by the third project. Submissions clear legal on the first pass more often than not. A six-week cycle shrinks to two." |
-| **A3** Medical congress (Brittany) | `[conference] content` | "Saw [Company]'s team is presenting at [Conference] next month." | "Congress content has a hard deadline and three audiences: HCP attendees, KOLs, and the field team. Most brand teams over-spec the deliverable count and under-deliver on quality." | "Janssen runs their congress content through our pod. One editor across all three audiences, brand voice stays consistent from teaser to recap, regulatory QA baked in." |
-| **B5** Founder-led growth (Adam) | `[company] next phase` | "Saw [Company]'s [milestone] announcement." | "Founder-led marketing functions at this stage usually hit a wall where the junior marketing lead is drowning and the strategic conversations stop happening because everyone's executing." | "Asset Map has been a Viral client since 2017. Their marketing lead has a partner who thinks about positioning, platform strategy, and what to ship next, not just an editor who takes orders." |
+| **A1** FDA approval (Brittany) | `after the approval` | "Congrats on the FDA approval at [Company] last month." | "Most enterprise launches need approval-friendly volume that survives legal review on the first pass. Most vendors don't survive enterprise governance." | "Ontada, the McKesson healthcare-data subsidiary, runs their HCP and clinical-trial cuts through our pod. By the third project, the editor learned the compliance pattern: how their legal team flags claims, how their brand team catches color and font misuse, what triggers a redaction. A six-week cycle shrinks to two. Submissions clear legal first-pass more often than not." |
+| **A3** Medical congress (Brittany) | `before [conference]` | "Saw [Company]'s team is presenting at [Conference] next month." | "Congress content has a hard deadline and three audiences: HCP attendees, KOLs, and the field team. Most brand teams over-spec the deliverable count and under-deliver on quality." | "Janssen runs their congress content through our pod. One editor across the launch teaser, day-of clips, and recap series so the brand voice stays the same across all three. Regulatory QA built into the editor's workflow, every cut cleared before it goes to legal." |
+| **B5** Founder-led growth (Adam) | `after the milestone` | "Saw [Company]'s [milestone] announcement." | "Founder-led marketing functions at this stage usually hit a wall where the junior marketing lead is drowning and the strategic conversations stop happening because everyone's executing." | "Asset Map has been a Viral client since 2017. Their marketing lead has a partner who thinks about positioning, platform strategy, and what to ship next, not just an editor who takes orders. We were producing for them at Series A. Eight years later we're still producing." |
 
 ---
 
@@ -190,23 +213,23 @@ Each pair shows the fully resolved Email 1 + Email 2 ready to send. No placehold
 
 **Email 1**
 ```
-Subject: editor hire
+Subject: before you hire
 
 Hi Maya, saw Step is hiring a Video Editor. Most of our clients came to us
 right after a freelancer ghosted before a launch or a quarterly review. The
 math on hiring full-time usually doesn't survive a slow quarter either.
 
-Self Financial runs their video through our pod. One dedicated editor
-brand-trained before the first project, first drafts in 24 hours, Slack
-response inside the hour Mon to Fri. Unlimited revisions on the first batch
-until the baseline is right.
+Self Financial runs their video through our pod. The editor learned the
+brand from the kit handoff and was catching brand drift by video 3. Drafts
+back in 24 hours through Frame.io with timestamped notes, every cut clears
+a Project Manager QC pass before it ships.
 
 Worth a look for Step?
 ```
 
 **Email 2**
 ```
-Subject: re: editor hire
+Subject: re: before you hire
 
 Almost every team we work with came to us after a freelancer ghosted
 mid-campaign. The pattern is consistent enough we built the model around it.
@@ -225,7 +248,7 @@ Interested in 5 short-form cuts from one of your existing Step long-forms?
 
 **Email 1**
 ```
-Subject: series c content
+Subject: after the raise
 
 Hi Tom, congrats on Mercury's Series C last quarter. The 90 days after a
 round usually mean creative supply becomes the bottleneck. Sales enablement,
@@ -233,16 +256,16 @@ paid ads, recruiting content, and investor updates all need video at once,
 and hiring takes too long.
 
 Gainbridge, the growth team inside Group 1001 with about 160 billion in
-assets under management, runs their paid-creative testing through our pod.
-One dedicated editor, first drafts in 24 hours, ships new ad variants twice
-a week.
+AUM, runs their paid-creative testing through our pod. New ad variants ship
+twice a week. Hook and retention feedback baked into every test, so the
+editor knows what scored before shipping the next.
 
 Open to a 15-minute diagnostic?
 ```
 
 **Email 2**
 ```
-Subject: re: series c content
+Subject: re: after the raise
 
 Most growth teams that come to us have run paid for a quarter on a 14-day
 refresh cycle that should have been 5. The vendor couldn't keep up.
@@ -261,7 +284,7 @@ long-forms? (on us)
 
 **Email 1**
 ```
-Subject: editor hire
+Subject: before the hire
 
 Hi Sarah, saw Anomaly is hiring a Senior Video Editor. Most agencies that
 come to us tried to hire their way out and the math broke. A full-time
@@ -269,16 +292,17 @@ editor is dead weight on slow weeks, and the brand calendar doesn't pause
 while you ramp.
 
 Clever Digital Marketing, a Canadian agency running about 80 staff, runs
-our team behind their accounts white-label. Same editor every week, same-day
-first drafts on Full-Time, Slack response inside the hour. The cuts go out
-under their brand.
+our team behind their accounts white-label. The editor sits inside each
+client's Slack under their brand. Same-day first drafts on Full-Time,
+revisions in Frame.io, every cut clears the account lead's QC pass before
+going client-facing.
 
 Worth a look for Anomaly?
 ```
 
 **Email 2**
 ```
-Subject: re: editor hire
+Subject: re: before the hire
 
 Most agencies come to us after a vendor that survived strategy meetings but
 missed the client deliverable date. The math at signup stops working by
@@ -298,7 +322,7 @@ Interested in 5 short-form cuts from one of your existing client long-forms?
 
 **Email 1**
 ```
-Subject: new vp start
+Subject: first 90 days
 
 Hi Jessica, congrats on the VP Marketing start at Cala Health. First 90 days
 for most marketing leaders means an audit of the content stack while the
@@ -306,17 +330,16 @@ calendar keeps moving. The brief intake usually gets sloppy and video falls
 behind first.
 
 Self Financial runs their content production through our pod for exactly
-this. One dedicated editor brand-trained before the first project, first
-drafts in 24 hours, Slack response inside the hour Mon to Fri.
-
-The audit runs in parallel. The cadence holds.
+this. Brand kit captured on call one, locked into a templates library the
+editor pulls from. By video 3, the editor was catching brand drift before
+their marketing lead saw it. First drafts back in 24 hours.
 
 Worth a look for Cala?
 ```
 
 **Email 2**
 ```
-Subject: re: new vp start
+Subject: re: first 90 days
 
 The most common story we hear is great first month, quality slip by month
 four. Usually that means the vendor scaled the account through a pool. We
@@ -336,23 +359,24 @@ long-forms? (on us)
 
 **Email 1**
 ```
-Subject: approval launch
+Subject: after the approval
 
 Hi Rachel, congrats on the FDA approval at Lilly Oncology last month. Most
 enterprise launches need approval-friendly volume that survives legal review
 on the first pass. Most vendors don't survive enterprise governance.
 
 Ontada, the McKesson healthcare-data subsidiary, runs their HCP and
-clinical-trial cuts through our pod. The editor learns the compliance pattern
-by the third project. Submissions clear legal on the first pass more often
-than not. A six-week cycle shrinks to two.
+clinical-trial cuts through our pod. By the third project, the editor
+learned the compliance pattern: how their legal team flags claims, how
+their brand team catches color and font misuse, what triggers a redaction.
+A six-week cycle shrinks to two.
 
 Open to a 15-minute diagnostic?
 ```
 
 **Email 2**
 ```
-Subject: re: approval launch
+Subject: re: after the approval
 
 Enterprise teams usually come to us after a vendor couldn't survive legal
 and brand-compliance review. We've built around the approval cycle, not
@@ -372,15 +396,17 @@ Interested in 5 short-form cuts from one of your existing Lilly long-forms?
 
 **Email 1**
 ```
-Subject: renewal stack
+Subject: your q4 book
 
 Hi Marcus, saw Sage just announced the new client win. Most agencies hitting
 Q4 with new accounts and an in-house team already at capacity see existing
 clients start asking pointed questions about turnaround.
 
-Clever Digital Marketing, a Canadian agency running about 80 staff, runs our
-team behind five of their accounts white-label. Same-day first drafts,
-dedicated editor per account, Slack response inside the hour.
+Clever Digital Marketing runs our team behind five of their accounts
+white-label. The editor learned each client's brand from the kit handoff
+and was catching brand drift by the third project. Same-day first drafts
+on Full-Time, Slack response inside the hour, every cut clears the account
+lead's QC pass before going client-facing.
 
 Their renewal book got cleaner. Clients never knew.
 
@@ -389,7 +415,7 @@ Worth a look for Sage?
 
 **Email 2**
 ```
-Subject: re: renewal stack
+Subject: re: your q4 book
 
 Most agencies that come to us have a renewal book with one or two accounts
 flagging video as a churn risk. The vendor scaled the team through a pool.
@@ -404,22 +430,37 @@ Interested in 5 short-form cuts from one of your existing client long-forms?
 
 ---
 
-## VI Differentiator Library
+## VI Differentiator Library (rank-ordered by specificity)
 
-These are the REAL differentiators from the Discovery Questionnaire. Use them verbatim in Email 1's solution line. Match to context — the more specific to the prospect's pain, the better.
+These are the REAL differentiators from the Discovery Questionnaire. The library is now split into two tiers: **specific workflow elements** (best — they sound like nobody else's marketing) vs **generic claims** (use only if a specific one doesn't fit).
+
+### Tier 1 — Specific workflow + measurable outcomes (USE THESE FIRST)
 
 | Differentiator | When to use |
 |---|---|
-| "One dedicated editor, brand-trained before the first project" | Default — works in every signal |
-| "First drafts in 24 hours" (Funnel A) / "Same-day first drafts" (Funnel B) | Speed/responsiveness pain |
-| "Slack response inside the hour Mon to Fri 9 to 5 EST" | Communication-collapse pain (post-freelancer-ghost) |
+| **"The editor learned the brand from the kit handoff and was catching brand drift by video 3"** | Default — works in every signal. Most specific outcome we have. |
+| **"Brand kit captured on call one, locked into a templates library the editor pulls from"** | New marketing leader (B2) or new-account-onboarding signals |
+| **"Drafts back in 24 hours through Frame.io with timestamped notes"** (Funnel A) / **"Same-day drafts on Full-Time through Frame.io"** (Funnel B) | Speed pain + names the tool |
+| **"Every cut clears a Project Manager QC pass before it ships"** | Quality-fear pain. Names the QA gate. |
+| **"The editor sits inside the client's Slack channel under their brand"** (Funnel B) | Agency white-label signals |
+| **"After the brand-training week, the editor caught a brand-color misuse their last freelancer had shipped twice"** | Post-freelancer-ghost signals |
+| **"By the third project, the editor learned the compliance pattern: how legal flags claims, how brand catches color and font misuse, what triggers a redaction"** | Pharma/regulated environments |
+| **"A six-week cycle shrinks to two. Submissions clear legal first-pass more often than not"** | Enterprise pharma (Brittany) |
+| **"New ad variants ship twice a week. Hook and retention feedback baked into every test, so the editor knows what scored before shipping the next"** | Growth marketer (Lindsey) / paid creative pain |
+| **"One editor across the launch teaser, day-of clips, and recap series so the brand voice stays the same across the set"** | Sprint deliverables (launch, congress, campaign) |
+| **"The cuts go out under your brand. The client never knows we exist."** | Funnel B white-label |
+| **"We were producing for them at Series A. Eight years later we're still producing."** | Founder (Adam) — long-LTV proof |
+
+### Tier 2 — Generic claims (use ONLY if no Tier 1 fits)
+
+| Differentiator | When to use |
+|---|---|
+| "One dedicated editor, not a rotating pool" | Default fallback |
+| "Slack response inside the hour Mon to Fri 9 to 5 EST" | Communication-collapse pain |
 | "Unlimited revisions on the first batch until the baseline is right" | Quality-fear pain |
-| "Same editor every week. No pool, no rotation." | Brand-drift pain |
-| "The editor learns the compliance pattern by the third project" | Pharma/regulated environments |
 | "No ticket portal, no edit lottery, no autoresponder" | Vendor-collapse pain |
-| "The cuts go out under your brand. The client never knows we exist." | Funnel B (agency white-label) |
-| "Submissions clear legal on the first pass more often than not" | Enterprise pharma |
-| "Strategic input on hook, retention, and platform fit, not just execution" | Adam (founder) / mature buyers |
+
+**Rule:** If a sentence in the solution could be said by any subscription editing service, it's Tier 2 and probably needs to be replaced with a Tier 1 specific. Strong solutions name the workflow, the tool, the outcome, or all three.
 
 ---
 
