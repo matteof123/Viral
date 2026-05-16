@@ -61,11 +61,11 @@ Subject: [trigger-anchored 2-4 word lowercase subject]
 
 Hi [First Name],
 
-[TRIGGER LINE — see trigger table below].
+[TRIGGER — specific observation about the prospect, tied to the signal that fired].
 
-You're already producing the high-value content. The bottleneck is the edit cycle. [Vertical-matched named case study — Janssen / Cortechs.ai for pharma · Clever Digital for agencies · Self Financial / Gainbridge for fintech] runs their video repurposing through our editing pod.
+[PAIN — what specifically hurts about this situation. Granted to the trigger.]
 
-Same dedicated editor every week, managing editor on QA, finished cuts in days.
+[SOLUTION — what Viral concretely does to fix the pain. Specific and verifiable.]
 
 Worth a quick look?
 
@@ -77,32 +77,38 @@ Viral Ideas Marketing
 
 **Word target:** 70-85 words. **No em dashes. No exclamation marks. No spam words. No bracket placeholders in the final render. No apologetic PS. Sign-off is signature only — no in-body taglines.**
 
+The trigger, pain, and solution all change based on the signal that fired. The rest of the structure (greeting, CTA, sign-off) stays identical.
+
 ---
 
-## Trigger Line Examples by Signal
+## Trigger → Pain → Solution Library by Signal
 
-The trigger is Line 1 of Email 1. Each signal produces a different trigger line. The subject line follows the same trigger pattern (2-4 words, lowercase, anchored to a specific prospect-owned thing).
+This is the working library. For each signal, the table provides:
+- The **subject line** pattern
+- The **trigger line** (Line 1 — what we observed)
+- The **pain line** (Line 2 — what specifically hurts, tied to the trigger)
+- The **solution line** (Line 3 — what Viral does about it, specific and verifiable)
 
-### Prompt A — Pharma triggers
+### Prompt A — Pharma signals
 
-| Signal | Subject | Trigger line (Line 1 of Email 1) |
-|---|---|---|
-| **A1** FDA approval | `[drug] launch` | "Congrats on the FDA approval for [Drug]. Launch quarters typically mean six weeks of HCP intros, sales enablement, and KOL content moving through med-legal at the same time." |
-| **A2** Clinical trial readout | `[trial] readout` | "Saw [Company] just published the [Trial Name] Phase III readout. The pre-launch cycle that follows usually means advisory board summaries, MOA explainers, and KOL clips queued at once." |
-| **A3** Medical congress | `[conference] content` | "Saw [Company]'s team is presenting at [Conference] next month. Conference content usually splits three ways: launch teaser, day-of clips, and the recap series sales uses for the next quarter." |
-| **A4** Named pharma agency | `agency overflow` | "Saw [Company] credits [Agency] on the [Drug] work. Most pharma brand teams use a lead agency for strategy and a separate pod for editing volume, especially through launch quarters." |
+| Signal | Subject | Trigger | Pain | Solution |
+|---|---|---|---|---|
+| **A1** FDA approval | `[drug] launch` | "Congrats on the FDA approval for [Drug] last [Month]." | "Launch quarters compress six weeks of HCP intros, sales enablement, and KOL content into med-legal at the same time. In-house production rarely scales fast enough for that sprint." | "Viral runs the editing team for your launch quarter. One dedicated editor across all assets, managing editor on regulatory QA, brief-on-the-first-try workflow that cuts revisions roughly in half." |
+| **A2** Clinical trial readout | `[trial] readout` | "Saw the [Trial Name] Phase III readout from [Company] last [Month]." | "The 90 days between readout and launch usually means advisory board summaries, MOA explainers, and KOL interview cuts all queuing through med-legal at once. Each cycle adds 2-3 weeks to the next deliverable." | "Viral runs the pre-launch content backlog as one workflow. Same dedicated editor every week, managing editor catches regulatory issues before they reach your desk, finished cuts in days not weeks." |
+| **A3** Medical congress | `[conference] content` | "Saw [Company]'s team is presenting at [Conference] next month." | "Congress content has a hard deadline and three different audiences: HCP attendees, KOLs, and the field team. Most brand teams over-spec the deliverable count and under-deliver on quality." | "Viral builds the launch teaser, day-of clips, and recap series as one workflow with one editor. Brand voice stays consistent across all three audiences, regulatory QA baked in." |
+| **A4** Named pharma agency | `agency overflow` | "Saw [Company] credits [Agency] on the [Drug] work." | "Lead agencies are built for strategy and tentpole productions. The volume editing underneath usually bottlenecks at the agency's hourly rate, and switching agencies mid-launch is too risky." | "Viral plugs in as the editing layer underneath the lead agency, taking high-volume cuts off their plate. The agency keeps strategy and tentpole work, you get launch-quarter throughput without the rate spike." |
 
-### Prompt B — Universal triggers
+### Prompt B — Universal signals
 
-| Signal | Subject | Trigger line (Line 1 of Email 1) |
-|---|---|---|
-| **B1** Video / content job posting | `video specialist hire` | "I saw [Company] is hiring a [Role Title] for the [Team] team. Open production roles usually mean the brand calendar is already running ahead of the team's editing capacity." |
-| **B2** New marketing leader | `new [role] start` | "Congrats on the [Role] start at [Company]. First 90 days for most marketing leaders means a content stack audit and a new cadence to ship by quarter-end." |
-| **B3** Underutilized long-form footage | `your [topic] interview` | "I saw [Company]'s recent [Topic] interview on the brand channel — [X] minutes of long-form content. Brand teams that repurpose long-form into short-form usually see 5-10x more reach from the same source material." |
-| **B4** Image-heavy LinkedIn | `your video gap` | "I noticed [Company] is posting [X] times a week on LinkedIn — mostly carousels and graphics. Brand teams that add video to the same posting cadence usually see 2-3x the engagement from the same audience." |
-| **B5** Growth announcement | `[announcement] content` | "Saw [Company]'s [Partnership / Office / Client / Campaign] announcement. Launches like that typically trigger a content sprint — launch clips, internal comms, social cuts, and a recap deck." |
-| **B6** Funding round | `[series] content` | "Congrats on the [Series X]. The 90 days that follow usually mean creative supply becomes the bottleneck — sales enablement, paid ads, and recruiting content all needed at once." |
-| **B7** LinkedIn activity (fallback) | `your [topic] post` | "Saw your recent LinkedIn post on [Topic]. Posts that land usually have 5-10x the reach when republished as a short-form video with captions and a branded cut." |
+| Signal | Subject | Trigger | Pain | Solution |
+|---|---|---|---|---|
+| **B1** Video / content job posting | `video specialist hire` | "Saw [Company] is hiring a [Role Title] for the [Team] team." | "Full-time editors take 60-90 days to source, ramp, and reach productive output. The brand calendar doesn't pause while you hire." | "Viral's pod starts producing in week one with a dedicated editor and managing editor on QA. When the in-house hire ramps, Viral becomes the overflow layer." |
+| **B2** New marketing leader | `new [role] start` | "Congrats on the [Role] start at [Company]." | "First 90 days for most marketing leaders means a content stack audit while still shipping. Most in-house teams can't both audit and produce at the same cadence." | "Viral handles the production volume during the audit so the new leader's first quarter ships on cadence. Same dedicated editor every week, brand kit captured on call one." |
+| **B3** Underutilized long-form footage | `your [topic] interview` | "I saw [Company]'s recent [Topic] interview on the brand channel. [X] minutes of long-form." | "Most teams sit on long-form like this for weeks before short-form cuts ship. The production queue compounds with every derivative cut." | "Viral takes one long-form and ships 5-10 branded short-form pieces in 5 business days. Captions, brand kit, and platform-specific aspect ratios all built into the workflow." |
+| **B4** Image-heavy LinkedIn | `your video gap` | "I noticed [Company] is posting [X] times a week on LinkedIn, mostly carousels and graphics." | "Image and carousel posts cap engagement at the algorithm ceiling. Adding video doubles the production load, which most in-house teams can't absorb on top of existing work." | "Viral produces the video layer on top of your existing posting cadence. Brand kit captured once, edited cuts ship weekly, no disruption to in-house workload." |
+| **B5** Growth announcement | `[announcement] content` | "Saw [Company]'s [Partnership / Office / Client / Campaign] announcement." | "Announcements trigger a content sprint: launch clips, internal comms, social cuts, and a recap deck for the next board update. In-house teams rarely scale up for the sprint, so quality drops." | "Viral's pod takes the sprint deliverables off your in-house team's plate. They ship on time, you don't burn out the existing editors, brand consistency stays intact." |
+| **B6** Funding round | `[series] content` | "Congrats on the [Series X]." | "Growth-stage funding usually means a creative-supply problem. Sales enablement, paid ads, recruiting content, and investor updates all need video at the same time, and hiring takes too long." | "Viral plugs in as the creative-supply layer in week one. Dedicated editor scales output as the team's needs grow, no hiring overhead, no ramp time." |
+| **B7** LinkedIn activity (fallback) | `your [topic] post` | "Saw your recent LinkedIn post on [Topic]." | "Most posts that land die after 7 days on the feed. Republishing as branded short-form video extends the lifespan, but most teams don't have the production capacity to do it consistently." | "Viral turns LinkedIn posts and other written assets into branded short-form videos in days. Captions, voiceover, brand kit baked in, ready to repost across channels." |
 
 ---
 
@@ -113,11 +119,11 @@ Subject: your moa interview
 
 Hi Brittany,
 
-I saw Ontada's recent MOA interview on the brand channel — 38 minutes of long-form content. Brand teams that repurpose long-form into short-form usually see 5-10x more reach from the same source material.
+I saw Ontada's recent MOA interview on the brand channel. 38 minutes of long-form.
 
-You're already producing the high-value content. The bottleneck is the edit cycle. Janssen and Cortechs.ai run their HCP video repurposing through our editing pod.
+Most teams sit on long-form like this for weeks before short-form cuts ship. The production queue compounds with every derivative cut.
 
-Same dedicated editor every week, managing editor on QA, finished cuts in days.
+Viral takes one long-form and ships 5-10 branded short-form pieces in 5 business days. Captions, brand kit, and platform-specific aspect ratios all built into the workflow.
 
 Worth a quick look?
 
@@ -144,7 +150,7 @@ Hi [First Name],
 
 Viral can turn any long-form video into a set of branded short-form cuts in days, eliminating the multi-week edit cycle most brand teams hit.
 
-Would you be interested in 5 short-form cuts from one of your existing long-forms? (on us)
+Interested in 5 short-form cuts from one of your existing long-forms? (on us)
 
 Cheers,
 
@@ -167,7 +173,7 @@ It looks like Ontada is putting out long-form content on a regular cadence — t
 
 Viral can turn any long-form video into a set of branded short-form cuts in days, eliminating the multi-week edit cycle most brand teams hit.
 
-Would you be interested in 5 short-form cuts from one of your existing long-forms? (on us)
+Interested in 5 short-form cuts from one of your existing long-forms? (on us)
 
 Cheers,
 
