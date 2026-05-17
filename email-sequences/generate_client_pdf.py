@@ -1,12 +1,11 @@
 #!/usr/bin/env python3
 """
-Viral Ideas Marketing — Outbound Email System (client-facing PDF).
+Viral Ideas Marketing — Outbound Email System (client-facing PDF, v4).
 
-Written for Dave Feinman and Zach Medina as the deliverable that captures the
-strategy, signals, structure, and the exact emails we'd send.
+Healthcare/pharma focus for the first 90 days. Six rendered prospect pairs
+showing the Trigger + Poke-the-bear + Solution-with-Defuse + Soft-CTA pattern.
 
-No internal benchmarks. No external references to other systems. Prose-driven
-voice, written as if briefing the client in person.
+Written for Dave Feinman and Zach Medina.
 """
 import os
 from reportlab.lib import colors
@@ -101,9 +100,9 @@ def cover_only(canvas, doc):
     canvas.setFillColor(colors.white)
     canvas.setFont("Helvetica", 13)
     canvas.drawCentredString(LETTER[0]/2, LETTER[1]-5.0*inch,
-                             "Two funnels. Eleven buying signals.")
+                             "Healthcare and pharma focus.")
     canvas.drawCentredString(LETTER[0]/2, LETTER[1]-5.3*inch,
-                             "The exact emails we plan to send.")
+                             "Ten buying signals. Six emails ready to send.")
     canvas.setFont("Helvetica", 10)
     canvas.setFillColor(colors.HexColor("#BBBBBB"))
     canvas.drawCentredString(LETTER[0]/2, 1.55*inch, f"Prepared {date.today().isoformat()}")
@@ -133,8 +132,8 @@ def make_table(rows, col_widths, header=True):
     t.setStyle(TableStyle(style))
     return t
 
-def email_pair(name, role, company, funnel_note, subject1, body1, subject2, body2):
-    """Render one prospect's Email 1 + Email 2 with context note."""
+def email_pair(name, role, company, funnel_note, subject1, body1, body2):
+    """Render one prospect's Email 1 + Email 2."""
     elements = []
     elements.append(H2(f"{name}, {role}, {company}"))
     elements.append(NOTE(funnel_note))
@@ -151,219 +150,148 @@ def build():
                             title="Viral Ideas — Outbound Email System")
     story = []
 
-    # Cover
     story.append(PageBreak())
 
     # ---- What this is ----
     story.append(H("What this is"))
-    story.append(LEAD("The outbound system we're building for Viral, captured in one document."))
-    story.append(P("Two funnels because your buyers want different things. Eleven buying signals because outbound that ignores triggers wastes everyone's time. Six full emails so you can see exactly what we plan to send before we send it."))
+    story.append(LEAD("The outbound system we're building for Viral, focused on healthcare and pharma for the first 90 days."))
+    story.append(P("Ten buying signals because outbound that ignores triggers wastes everyone's time. Six full emails so you can see exactly what we plan to send before we send it."))
     story.append(P("You should be able to read this end to end in fifteen minutes. The six emails in the middle are the heart of it. Everything else explains why those emails look the way they do."))
     story.append(Spacer(1, 0.15*inch))
     story.append(P("Three things to flag up front. Pricing stays off cold email until we agree it shouldn't. The free five-cut repurposing pack is the lead magnet we offer in the follow-up. And every email ends at the call to action, with no sign-off in the body, because Viral's email signature handles the rest."))
 
     story.append(PageBreak())
 
-    # ---- The two funnels ----
-    story.append(H("The two funnels"))
-    story.append(LEAD("Outbound for Viral splits into two motions because your buyers operate in different worlds."))
+    # ---- Who we're targeting ----
+    story.append(H("Who we're targeting"))
+    story.append(LEAD("Healthcare and pharma marketing leaders. First 90 days. One vertical at a time."))
+    story.append(P("The Discovery work named five archetypes Viral wins with. For the first ninety days of outbound we focus on the three that live in healthcare and pharma."))
 
-    story.append(H2("Funnel A &mdash; Half-Time, $2,500 a month"))
-    story.append(P("Built for two in-house buyers. The first is the mid-market marketing manager, the Sierra Bowman shape: she runs a one-to-three person team inside a fifty to five hundred million revenue company, signs off on five to ten thousand a month herself, and is personally on the hook every time video shows up off-brand in a Monday standup. The second is the growth marketer at a funded startup, the Lindsey McKone shape: VC or PE backed company, five to fifty million in revenue, weekly creative testing, paid social budget, fourteen-day refresh cycle that should have been five."))
-    story.append(P("The hook for Funnel A is operational. Save the week. Stop being the bottleneck. The CMO stops asking about video. The freelancer who ghosted last quarter doesn't get to set the calendar."))
+    story.append(H2("The marketing manager at a healthcare brand"))
+    story.append(P("Mid-market marketing manager or senior marketing manager running a one-to-three person team inside a pharma, biotech, or healthcare brand. She runs a content quota that keeps growing, a freelancer rotation that keeps breaking, and a CMO who walks into the Monday standup and asks pointed questions about video. She's competent and tired of being the last line of defense when a vendor disappears."))
 
-    story.append(H2("Funnel B &mdash; Full-Time, $4,760 a month"))
-    story.append(P("Built for the agency owner, the Daniel Rahmon shape: founder or CEO of a five to fifty million revenue marketing or content agency, thirty to a hundred and fifty staff, retention is the whole job. Different math from Funnel A. Agencies don't have a CMO problem; they have a margin problem. Every account they lose is margin lost. Every full-time editor they hire is dead weight on slow weeks."))
-    story.append(P("The hook for Funnel B is structural. White-label production. Dedicated editor per account who sits inside the client's Slack channel under the agency's brand. The client never knows a vendor exists. The agency's renewal book gets cleaner."))
+    story.append(H2("The senior marketing director at an enterprise subsidiary"))
+    story.append(P("Senior marketing director or business director running a brand inside a McKesson, Johnson and Johnson, or BMS-shape parent company. Budget isn't the friction. Trust and risk are. She won't buy from a vendor that can't survive legal review, brand-compliance audits, and procurement. Her name is on the PO when something goes wrong."))
 
-    story.append(H2("And two we win when they come to us"))
-    story.append(P("Brittany at Ontada and Adam at Asset Map are the enterprise pharma director and the eight-year-tenure founder, respectively. They're opportunistic plays. We win them when they walk in, but we're not spending paid budget chasing them. They get a third, lighter track."))
+    story.append(H2("The growth marketer at a funded biotech or health-tech startup"))
+    story.append(P("Growth marketer, performance marketer, or demand-gen lead at a VC or PE backed biotech or health-tech company in the five to fifty million revenue range. Her metric is CAC. Her cadence is weekly creative testing. She doesn't care if the video wins a Cannes Lion. She cares that the hook works in three seconds and the retention curve holds."))
+
+    story.append(P("Outside of healthcare, two other archetypes (agency owners and B2B founders) will get their own playbooks once we validate the healthcare motion in the first 90 days. Not in scope for this document."))
 
     story.append(PageBreak())
 
     # ---- How we find prospects ----
     story.append(H("How we find prospects"))
-    story.append(LEAD("Signal-first sourcing. We don't blast to everyone in healthcare or every agency in the country. We find prospects in the middle of a buying moment and write to that moment."))
-    story.append(P("The signal logic runs in priority order. Strongest signal fires first; the rest of the cascade only runs if no higher-priority signal is found. For a pharma or biotech lead, we check pharma-specific signals first and fall through to the universal set. For any other lead, we run the universal set directly."))
+    story.append(LEAD("Signal-first sourcing. Ten triggers, run in priority order. Stop at the first match."))
+    story.append(P("For each lead, we check the pharma-specific signals first. If none fire, we run the universal set. The same lead never gets two emails about two different triggers; the strongest one wins."))
 
     story.append(H2("Pharma-specific signals"))
     pharma_signals = [
         ["Signal", "What we look for", "Window"],
         ["FDA approval or new indication", "Drugs@FDA, FDA press releases, company 8-K filings", "Last 90 days"],
-        ["Clinical trial milestone", "ClinicalTrials.gov status updates, Phase III readouts, primary endpoint announcements", "Last 90 days"],
-        ["Upcoming medical congress", "Accepted abstracts, posters, symposia at ASH, ASCO, AHA, ESMO, AAD, BIO, JPM Healthcare", "Next 60 days"],
-        ["Currently using a named pharma video agency", "Agency-of-record credits, press releases, LinkedIn employee bios", "Verified in last 12 months"],
+        ["Phase III readout or trial milestone", "ClinicalTrials.gov status updates, primary endpoint announcements", "Last 90 days"],
+        ["Upcoming medical congress", "Accepted abstracts and posters at ASH, ASCO, AHA, ESMO, AAD, BIO, JPM Healthcare", "Next 60 days"],
+        ["Currently using a named pharma video agency", "Agency-of-record credits in press releases and LinkedIn employee bios", "Verified in last 12 months"],
     ]
-    story.append(make_table(pharma_signals, [1.7*inch, 4.0*inch, 1.0*inch]))
+    story.append(make_table(pharma_signals, [2.0*inch, 3.7*inch, 1.0*inch]))
 
     story.append(H2("Universal signals"))
     universal_signals = [
         ["Signal", "What we look for", "Window"],
-        ["Open job posting for a video, content, or production role", "LinkedIn Jobs and Indeed listings", "Last 30 days"],
-        ["Freelance editor publicly open to work after recent client engagement", "LinkedIn open-to-work flag plus prior project history with the target", "Last 30 days"],
-        ["New marketing, brand, or content leader hired", "LinkedIn \"started new position\" with target company and a marketing or content title", "Last 90 days"],
-        ["Underutilized long-form footage on brand channel", "Brand YouTube or Vimeo with a fifteen-plus minute video and no short-form derivative on LinkedIn or Instagram", "Last 120 days"],
+        ["Open job posting for a video, content, or production role", "LinkedIn Jobs and Indeed listings at healthcare companies", "Last 30 days"],
+        ["New marketing, brand, or content leader hired", "LinkedIn \"started new position\" at a healthcare company with a marketing or content title", "Last 90 days"],
+        ["Underutilized long-form footage on brand channel", "Brand YouTube or Vimeo with a 15-plus minute KOL or webinar video and no short-form derivative", "Last 120 days"],
         ["Image-heavy LinkedIn brand page", "Corporate page posting weekly with fewer than three videos in the window", "Last 120 days"],
         ["Recent growth, expansion, or new client win announcement", "Company LinkedIn brand posts, press releases, newsroom pages", "Last 90 days"],
-        ["Recent funding or growth milestone", "Crunchbase, TechCrunch, BioPharma Dive, Endpoints News", "Last 90 days"],
-        ["Agency RFP for video editing partners (Funnel B)", "Public RFP posts on LinkedIn or agency-specific job boards", "Last 30 days"],
-        ["Quarterly renewal-cycle boundary (Funnel B)", "Calendar trigger at end of each quarter", "Continuous"],
-        ["Lead's most recent LinkedIn activity (guaranteed fallback)", "Profile activity tab for any post, comment, or repost", "Last 30 days"],
+        ["Recent funding or growth milestone (biotech, health tech)", "Crunchbase, TechCrunch, BioPharma Dive, Endpoints News", "Last 90 days"],
     ]
-    story.append(make_table(universal_signals, [2.0*inch, 3.7*inch, 1.0*inch]))
+    story.append(make_table(universal_signals, [2.4*inch, 3.3*inch, 1.0*inch]))
 
     story.append(PageBreak())
 
-    # ---- The email sequence ----
-    story.append(H("The email sequence"))
-    story.append(LEAD("Two emails per prospect. Same thread."))
-    story.append(P("The first email teases the product. The second offers the lead magnet."))
+    # ---- The email structure ----
+    story.append(H("The email structure"))
+    story.append(LEAD("Two emails per prospect, same thread."))
+    story.append(P("The first email anchors a buying trigger. The second offers the lead magnet."))
 
     story.append(H2("Email 1 has four moves"))
-    story.append(B("<b>The trigger.</b> One sentence on what we observed about the prospect. The address of their listing, the role they're hiring, the announcement they made. Specific."))
-    story.append(B("<b>The pain.</b> One paragraph in their own words on what hurts. The freelancer ghosted. The brief intake got sloppy. The renewal cycle has a client flagging video."))
-    story.append(B("<b>The solution.</b> One paragraph that names a real client, a specific workflow step, the SLA, the tool, and the QA gate. The kind of detail only Viral can say."))
-    story.append(B("<b>The call to action.</b> A soft yes-no for most signals (\"Worth a look for [their company]?\"). A diagnostic offer for high-commitment signals (\"Open to a 15-minute diagnostic?\")."))
+    story.append(B("<b>The trigger.</b> One sentence on what we observed about the prospect. FDA approval, hire posted, abstract accepted, KOL interview uploaded. Specific."))
+    story.append(B("<b>The poke-the-bear question.</b> Right after the trigger, a question that makes the prospect nod silently. \"Are you about to spend six weeks pushing HCP cuts through med-legal at the same time?\" The prospect's own internal voice, not ours."))
+    story.append(B("<b>The solution.</b> One paragraph that names a real client (Janssen or Ontada), the benefit they get (not the feature we provide), and a defused objection in two to five words. \"Approval-friendly from day one.\" \"No ghosting, no ramp gap.\""))
+    story.append(B("<b>The call to action.</b> Soft, specific, named. \"Worth a look for [Company]?\" or \"Open to a 15-minute walkthrough?\""))
     story.append(P("The email ends at the call to action. No \"Cheers, Sarah.\" No tagline. EmailBison's signature variable handles the sign-off."))
 
     story.append(H2("Email 2 lands the magnet"))
-    story.append(P("Sent three to five days after Email 1, same thread. Opens with a short paragraph drawing the pattern from our case files (\"Almost every team we work with came to us after a freelancer ghosted mid-campaign\"). One sentence describing what Viral physically does. And the offer:"))
+    story.append(P("Sent three to five days after Email 1, same thread. Opens with one short paragraph drawing the pattern from our case files (\"Enterprise teams usually come to us after a vendor couldn't survive legal review\"). One sentence describing what Viral physically does. And the offer:"))
     story.append(LEAD("\"Interested in 5 short-form cuts from one of your existing long-forms? (on us)\""))
-    story.append(P("That offer is the door. When a prospect says yes, we send the cuts inside five business days, branded and captioned, ready to post. The cuts are how the conversation starts, not how it ends. After delivery, the diagnostic call comes naturally."))
+    story.append(P("When a prospect says yes, we send the cuts inside five business days, branded and captioned and ready to post. The cuts are how the conversation starts, not how it ends. After delivery, the diagnostic call comes naturally."))
 
     story.append(PageBreak())
 
     # ---- Subject lines ----
     story.append(H("Subject lines"))
     story.append(LEAD("Two to four words, lowercase, built to create a small curiosity gap."))
-    story.append(P("Four patterns work. The first three are the workhorses; the fourth is for time-specific moments."))
+    story.append(P("Four patterns work. The first two carry most of the volume."))
 
     subj_rows = [
         ["Pattern", "What it does", "Examples"],
         ["<b>Before [their action]</b>", "Hints at an alternative they haven't considered",
-         "<font face='Courier'>before you hire</font>, <font face='Courier'>before the hire</font>"],
+         "<font face='Courier'>before you hire</font>, <font face='Courier'>before asco</font>"],
         ["<b>After [their event]</b>", "Implies and-now-what",
-         "<font face='Courier'>after the raise</font>, <font face='Courier'>after the approval</font>, <font face='Courier'>after the win</font>"],
+         "<font face='Courier'>after the approval</font>, <font face='Courier'>after the readout</font>, <font face='Courier'>after the raise</font>"],
         ["<b>Their [thing], [twist]</b>", "Possessive with an intriguing modifier",
-         "<font face='Courier'>your q4 book</font>, <font face='Courier'>your freelancer gap</font>, <font face='Courier'>your interview, untouched</font>"],
-        ["<b>Time-bound reference</b>", "Names the window the prospect is in",
+         "<font face='Courier'>your interview, untouched</font>, <font face='Courier'>your freelancer gap</font>"],
+        ["<b>Time-bound</b>", "Names the window the prospect is in",
          "<font face='Courier'>first 90 days</font>, <font face='Courier'>six week sprint</font>"],
     ]
     story.append(make_table(subj_rows, [1.6*inch, 2.6*inch, 2.5*inch]))
 
-    story.append(P("Things we avoid: urgency words (now, closing, last chance), hype words (revolutionary, game-changing, world-class), and generic placeholders (quick question, video editing services). Your brand voice is calm and confident; the subject line is the first place a prospect tests whether we know that."))
+    story.append(P("What we avoid: urgency words (now, closing, last chance), hype words (revolutionary, game-changing, world-class), and generic placeholders (quick question, video editing services). Your brand voice is calm and confident; the subject line is the first place a prospect tests whether we know that."))
 
     story.append(PageBreak())
 
-    # ---- What makes a solution strong ----
-    story.append(H("What makes a solution strong"))
-    story.append(LEAD("The solution paragraph is the part most cold emails miss."))
-    story.append(P("A weak solution lists features. Dedicated editor, fast drafts, good QA. Every subscription editing service in the category says some version of that. Nothing about it tells the reader why Viral instead of any other vendor at the same price."))
-    story.append(P("A strong solution does three things in three sentences. First, it names a real client and how they specifically use Viral &mdash; output volume, channel, deliverable type. \"Self Financial runs their video through our pod\" beats \"we work with Fortune 500s.\""))
-    story.append(P("Second, it names a workflow step or a measurable outcome. The editor learned the brand from the kit handoff. The editor was catching drift by video three. A six-week cycle shrank to two. New ad variants ship twice a week. These sentences are not feature claims. They're observable details from how Viral actually delivers, the kind of thing a competitor can't just copy."))
-    story.append(P("Third, it names the SLA, the tool, and the QA gate. Drafts back in twenty-four hours through Frame.io with timestamped notes. Every cut clears a Project Manager QC pass before it ships. The editor sits inside the client's Slack channel under the agency's brand. Named workflow elements beat adjectives every time."))
-    story.append(P("The test we apply when we write a solution: if a sentence could be said by any subscription editing service, we replace it. Strong solutions name what only Viral could name."))
+    # ---- The solution paragraph ----
+    story.append(H("The solution paragraph"))
+    story.append(LEAD("The part most cold emails miss."))
+    story.append(P("A weak solution lists features. Dedicated editor, fast drafts, good QA. Every subscription editing service in the category says some version of that. Nothing in it tells the reader why Viral instead of any other vendor."))
+    story.append(P("A strong solution does three things in three sentences."))
+    story.append(P("First, it names a real pharma client and how they use Viral. For Viral's first 90 days that's almost always <b>the team at Janssen</b> or <b>brand teams at Ontada</b>. One named anchor per email."))
+    story.append(P("Second, it names the benefit or result the buyer gets. Not the feature we provide. \"The calendar holds and the CMO stops asking about video in standup\" beats \"dedicated editor with QA pass.\" Features only earn a sentence when they're directly tied to a measurable outcome (\"the six-week cycle shrinks to two\" is fine because it pairs the workflow with the result)."))
+    story.append(P("Third, it defuses the biggest objection at the trigger in two to five words. \"Approval-friendly from day one.\" \"Built for med-legal review.\" \"No ghosting, no ramp gap.\" Short enough to land, specific enough to neutralize."))
+
+    story.append(H2("The objection map"))
+    obj_rows = [
+        ["Defuse phrase", "Handles the objection"],
+        ["\"Approval-friendly from day one\"", "Will they survive enterprise governance?"],
+        ["\"Regulatory-aware from day one\"", "Do they understand compliance?"],
+        ["\"Built for med-legal review\"", "Will they understand our review process?"],
+        ["\"Compliance-aware from day one\"", "Can they touch HCP-targeted content?"],
+        ["\"No ghosting, no ramp gap\"", "What if they disappear like the last freelancer?"],
+        ["\"No ramp time\"", "Can they start fast enough to matter?"],
+    ]
+    story.append(make_table(obj_rows, [2.6*inch, 4.1*inch]))
 
     story.append(PageBreak())
 
     # ---- Six emails ----
     story.append(H("Six emails we'd send today"))
-    story.append(LEAD("What follows is six prospect pairs. The trigger, the email, the follow-up."))
+    story.append(LEAD("Six healthcare prospects. The trigger, the email, the follow-up."))
     story.append(P("Names and companies are illustrative. The structure and copy are ready. If you want to swap a case study or a phrase, this is the page to mark up."))
 
     story.append(PageBreak())
 
     # Prospect 1
     story.extend(email_pair(
-        "Maya Reyes", "Senior Marketing Manager", "Step",
-        "Funnel A. Trigger: open video editor job posting last week.",
-        "before you hire",
-        """Hi Maya, saw Step is hiring a Video Editor. Most of our clients came to us right after a freelancer ghosted before a launch or a quarterly review. The math on hiring full-time usually doesn't survive a slow quarter either.
-
-Self Financial runs their video through our pod. The editor learned the brand from the kit handoff and was catching brand drift by video 3. Drafts back in 24 hours through Frame.io with timestamped notes, every cut clears a Project Manager QC pass before it ships.
-
-Worth a look for Step?""",
-        "before you hire",
-        """Almost every team we work with came to us after a freelancer ghosted mid-campaign. The pattern is consistent enough we built the model around it.
-
-Viral takes any long-form video and ships 5 short-form pieces in 5 business days. Branded, captioned, ready to post on LinkedIn or YouTube.
-
-Interested in 5 short-form cuts from one of your existing Step long-forms? (on us)"""
-    ))
-
-    story.append(PageBreak())
-
-    # Prospect 2
-    story.extend(email_pair(
-        "Tom Diaz", "Head of Growth", "Mercury",
-        "Funnel A. Trigger: Mercury closed Series C last quarter.",
-        "after the raise",
-        """Hi Tom, congrats on Mercury's Series C last quarter. The 90 days after a round usually mean creative supply becomes the bottleneck. Sales enablement, paid ads, recruiting content, and investor updates all need video at once, and hiring takes too long.
-
-Gainbridge, the growth team inside Group 1001 with about 160 billion in AUM, runs their paid-creative testing through our pod. New ad variants ship twice a week. Hook and retention feedback baked into every test, so the editor knows what scored before shipping the next.
-
-Open to a 15-minute diagnostic?""",
-        "after the raise",
-        """Most growth teams that come to us have run paid for a quarter on a 14-day refresh cycle that should have been 5. The vendor couldn't keep up.
-
-Viral takes any long-form video and ships 5 short-form pieces in 5 business days. Branded, captioned, ready for paid or organic.
-
-Interested in 5 short-form cuts from one of your existing Mercury long-forms? (on us)"""
-    ))
-
-    story.append(PageBreak())
-
-    # Prospect 3
-    story.extend(email_pair(
-        "Sarah Chen", "CEO", "Anomaly",
-        "Funnel B. Trigger: open Senior Video Editor job posting at the agency.",
-        "before the hire",
-        """Hi Sarah, saw Anomaly is hiring a Senior Video Editor. Most agencies that come to us tried to hire their way out and the math broke. A full-time editor is dead weight on slow weeks, and the brand calendar doesn't pause while you ramp.
-
-Clever Digital Marketing, a Canadian agency running about 80 staff, runs our team behind their accounts white-label. The editor sits inside each client's Slack under their brand. Same-day first drafts on Full-Time, revisions in Frame.io, every cut clears the account lead's QC pass before going client-facing.
-
-Worth a look for Anomaly?""",
-        "before the hire",
-        """Most agencies come to us after a vendor that survived strategy meetings but missed the client deliverable date. The math at signup stops working by month three.
-
-Viral takes any long-form video and ships 5 short-form pieces in 5 business days. Branded, captioned, ready to deliver under your label.
-
-Interested in 5 short-form cuts from one of your existing client long-forms? (on us)"""
-    ))
-
-    story.append(PageBreak())
-
-    # Prospect 4
-    story.extend(email_pair(
-        "Jessica Park", "VP Marketing", "Cala Health",
-        "Funnel A. Trigger: Jessica started as VP Marketing six weeks ago.",
-        "first 90 days",
-        """Hi Jessica, congrats on the VP Marketing start at Cala Health. First 90 days for most marketing leaders means an audit of the content stack while the calendar keeps moving. The brief intake usually gets sloppy and video falls behind first.
-
-Self Financial runs their content production through our pod for exactly this. Brand kit captured on call one, locked into a templates library the editor pulls from. By video 3, the editor was catching brand drift before their marketing lead saw it. First drafts back in 24 hours.
-
-Worth a look for Cala?""",
-        "first 90 days",
-        """The most common story we hear is great first month, quality slip by month four. Usually that means the vendor scaled the account through a pool. We don't run pools.
-
-Viral takes any long-form video and ships 5 short-form pieces in 5 business days. Branded, captioned, ready to post.
-
-Interested in 5 short-form cuts from one of your existing Cala Health long-forms? (on us)"""
-    ))
-
-    story.append(PageBreak())
-
-    # Prospect 5
-    story.extend(email_pair(
         "Rachel Park", "Senior Marketing Director", "Eli Lilly Oncology",
-        "Opportunistic enterprise pharma. Trigger: FDA approval at Lilly Oncology last month.",
+        "Pharma. Trigger: Eli Lilly Oncology received FDA approval last month.",
         "after the approval",
-        """Hi Rachel, congrats on the FDA approval at Lilly Oncology last month. Most enterprise launches need approval-friendly volume that survives legal review on the first pass. Most vendors don't survive enterprise governance.
+        """Hi Rachel,
 
-Ontada, the McKesson healthcare-data subsidiary, runs their HCP and clinical-trial cuts through our pod. By the third project, the editor learned the compliance pattern: how their legal team flags claims, how their brand team catches color and font misuse, what triggers a redaction. A six-week cycle shrinks to two.
+Saw Eli Lilly Oncology just got the FDA approval last month. Are you about to spend six weeks pushing HCP cuts, sales enablement, and KOL interviews through med-legal at the same time?
 
-Open to a 15-minute diagnostic?""",
-        "after the approval",
+The team at Janssen runs launch quarters through us. The calendar holds and the CMO stops asking about video in standup. Approval-friendly from day one.
+
+Open to a 15-minute walkthrough for Lilly?""",
         """Enterprise teams usually come to us after a vendor couldn't survive legal and brand-compliance review. We've built around the approval cycle, not against it.
 
 Viral takes any long-form video and ships 5 short-form pieces in 5 business days. Branded, captioned, regulatory-aware.
@@ -373,24 +301,107 @@ Interested in 5 short-form cuts from one of your existing Lilly long-forms? (on 
 
     story.append(PageBreak())
 
+    # Prospect 2
+    story.extend(email_pair(
+        "Maya Reyes", "Senior Marketing Manager", "Karuna Therapeutics",
+        "Pharma. Trigger: Karuna Therapeutics posted an open Senior Video Editor role.",
+        "before you hire",
+        """Hi Maya,
+
+Saw Karuna Therapeutics is hiring a Senior Video Editor. Are you covering the launch calendar yourself until that role ramps in three months?
+
+Brand teams at Ontada use us instead of hiring. The launch ships on cadence through every search, no one apologizes for video in standup, and the brand stays consistent without daily babysitting. No ghosting, no ramp gap.
+
+Worth a look for Karuna?""",
+        """Almost every team we work with came to us after a freelancer ghosted mid-campaign. The pattern is consistent enough we built the model around it.
+
+Viral takes any long-form video and ships 5 short-form pieces in 5 business days. Branded, captioned, regulatory-aware.
+
+Interested in 5 short-form cuts from one of your existing Karuna long-forms? (on us)"""
+    ))
+
+    story.append(PageBreak())
+
+    # Prospect 3
+    story.extend(email_pair(
+        "David Chen", "Senior Brand Director", "BMS Hematology",
+        "Pharma. Trigger: BMS Hematology's abstract was accepted for ASCO next month.",
+        "before asco",
+        """Hi David,
+
+Saw BMS Hematology's abstract accepted for ASCO next month. Are the launch teaser, day-of cuts, and recap series queued for legal yet, or is the brand team starting the build the week of?
+
+The team at Janssen runs congress content through us. The full set ships in time, the brand voice stays consistent across all three audiences, and no one chases the editor for the day-of clip. Regulatory-aware from day one.
+
+Worth a 15-minute walkthrough?""",
+        """Most pharma teams sit on long-form for weeks because the repurposing cycle keeps colliding with med-legal review. We've built the workflow around that constraint.
+
+Viral takes any long-form video and ships 5 short-form pieces in 5 business days. Branded, captioned, regulatory-aware.
+
+Interested in 5 short-form cuts from one of your existing BMS long-forms? (on us)"""
+    ))
+
+    story.append(PageBreak())
+
+    # Prospect 4
+    story.extend(email_pair(
+        "Sarah Lee", "Senior Marketing Director", "Sage Therapeutics",
+        "Pharma. Trigger: Sage Therapeutics published the Phase III readout.",
+        "after the readout",
+        """Hi Sarah,
+
+Saw Sage Therapeutics just published the Phase III readout. Is the pre-launch content already queued, or are advisory boards, MOA explainers, and KOL cuts about to hit med-legal at the same time?
+
+Brand teams at Ontada run pre-launch content through us. The six-week cycle shrinks to two and the team ships without the firefights. Built for med-legal review.
+
+Open to a 15-minute walkthrough?""",
+        """Enterprise teams usually come to us after a vendor couldn't survive legal and brand-compliance review. We've built around the approval cycle, not against it.
+
+Viral takes any long-form video and ships 5 short-form pieces in 5 business days. Branded, captioned, regulatory-aware.
+
+Interested in 5 short-form cuts from one of your existing Sage long-forms? (on us)"""
+    ))
+
+    story.append(PageBreak())
+
+    # Prospect 5
+    story.extend(email_pair(
+        "Jessica Park", "VP Marketing", "Karyopharm Therapeutics",
+        "Pharma. Trigger: Karyopharm uploaded a 38-minute KOL interview to YouTube with no short-form derivative.",
+        "your interview, untouched",
+        """Hi Jessica,
+
+Saw Karyopharm's recent KOL interview on the brand channel. 38 minutes on YouTube, no shorter cuts anywhere. Is the short-form derivative queued, or has med-legal review killed the repurposing cadence again?
+
+Brand teams at Janssen run KOL repurposing through us. One long-form becomes 5 to 10 branded short-form pieces and the LinkedIn cadence holds without the rebrief cycle. Compliance-aware from day one.
+
+Worth a look for Karyopharm?""",
+        """Most pharma teams sit on long-form for weeks because the repurposing cycle keeps colliding with med-legal review. We've built the workflow around that constraint.
+
+Viral takes any long-form video and ships 5 short-form pieces in 5 business days. Branded, captioned, regulatory-aware.
+
+Interested in 5 short-form cuts from one of your existing Karyopharm long-forms? (on us)"""
+    ))
+
+    story.append(PageBreak())
+
     # Prospect 6
     story.extend(email_pair(
-        "Marcus Webb", "COO", "Sage Communications",
-        "Funnel B. Triggers stacked: new client win announcement plus end-of-Q4 renewal cycle.",
-        "your q4 book",
-        """Hi Marcus, saw Sage just announced the new client win. Most agencies hitting Q4 with new accounts and an in-house team already at capacity see existing clients start asking pointed questions about turnaround.
+        "Daniel Hwang", "VP Marketing", "Inozyme Pharma",
+        "Biotech. Trigger: Inozyme Pharma closed Series C funding last month.",
+        "after the raise",
+        """Hi Daniel,
 
-Clever Digital Marketing runs our team behind five of their accounts white-label. The editor learned each client's brand from the kit handoff and was catching brand drift by the third project. Same-day first drafts on Full-Time, Slack response inside the hour, every cut clears the account lead's QC pass before going client-facing.
+Saw Inozyme Pharma just closed Series C. Are the launch teasers, investor updates, recruiting content, and KOL clips all about to land on the same week without a production team ramped up?
 
-Their renewal book got cleaner. Clients never knew.
+Brand teams at Ontada use us through funding cycles like this. Creative supply scales with the calendar and the CMO doesn't ask why the recap is late. No ramp time.
 
-Worth a look for Sage?""",
-        "your q4 book",
-        """Most agencies that come to us have a renewal book with one or two accounts flagging video as a churn risk. The vendor scaled the team through a pool. We don't.
+Open to a 15-minute walkthrough?""",
+        """Most growth-stage teams come to us after a quarter where creative supply couldn't keep up with the calendar. Hiring takes too long, vendors collapse under volume.
 
-Viral takes any long-form video and ships 5 short-form pieces in 5 business days. Branded, captioned, ready to deliver under your label.
+Viral takes any long-form video and ships 5 short-form pieces in 5 business days. Branded, captioned, regulatory-aware.
 
-Interested in 5 short-form cuts from one of your existing client long-forms? (on us)"""
+Interested in 5 short-form cuts from one of your existing Inozyme long-forms? (on us)"""
     ))
 
     story.append(PageBreak())
@@ -398,18 +409,15 @@ Interested in 5 short-form cuts from one of your existing client long-forms? (on
     # ---- How your buyers talk ----
     story.append(H("How your buyers talk"))
     story.append(LEAD("When clients describe what brought them to Viral, they don't talk like marketers. They talk like people whose week just broke."))
-    story.append(P("We use their exact words in the pain paragraph of Email 1. Those words make the prospect feel seen, not pitched. The phrasing is theirs, not ours."))
+    story.append(P("We use their exact words in the poke-the-bear question and the pain framing. The phrasing is theirs, not ours."))
 
-    story.append(H2("Words every buyer uses"))
+    story.append(H2("Operational pain (marketing manager and growth marketer)"))
     story.append(P("Ghosted. Dropped the ball. Off brand. Inconsistent. Unreliable. Another fire drill. I'm drowning. Out of bandwidth. We keep starting over. The last batch was rough. I just need someone I can trust. We can't scale this. I need a real team, not a freelancer."))
 
-    story.append(H2("Words agencies use"))
-    story.append(P("White-label. Dedicated editor. We need someone who can ramp without us teaching them everything. The client noticed."))
+    story.append(H2("Enterprise pharma pain (senior marketing director at subsidiary)"))
+    story.append(P("Approval friendly. On brand at scale. We can't have surprises. Six-week cycle. Med-legal review. Regulatory pass. Brand compliance audit. Missed redaction. Legal flag."))
 
-    story.append(H2("Words enterprise marketers use"))
-    story.append(P("Approval friendly. On brand at scale. We can't have surprises."))
-
-    story.append(P("These are the pain lines. They're not adjectives we'd pick; they're sentences your clients have already said to you. The pain paragraph of every Email 1 above pulls from this list."))
+    story.append(P("These are the pain lines. They're not adjectives we'd pick; they're sentences your clients have already said to you. The poke-the-bear question of every Email 1 above pulls from this list."))
 
     story.append(PageBreak())
 
@@ -417,28 +425,29 @@ Interested in 5 short-form cuts from one of your existing client long-forms? (on
     story.append(H("What's in every email"))
     story.append(LEAD("A condensed reference for the rules every email respects."))
     rules = [
-        "Fifty to one hundred words. Past one hundred, you lose the buyer.",
+        "Sixty to one hundred words. Past one hundred, you lose the buyer.",
         "Subject is two to four words, lowercase, anchored to something specific the prospect owns.",
         "No em dashes. Use sentence breaks or commas instead.",
         "No exclamation marks. Brand voice is calm and confident.",
         "No dollar symbols. Pricing belongs on the call, not in cold copy.",
         "No \"free.\" We use \"on us\" or \"complimentary.\"",
-        "No bracket placeholders in the final render. Every variable resolved before send.",
+        "No bracket placeholders in the final render.",
         "No sign-off in the body. EmailBison's signature variable handles \"Best, [Name].\"",
-        "No apologetic PS lines. \"If this isn't a fit\" reads insecure. Calm and confident only.",
+        "No apologetic PS. \"If this isn't a fit\" reads insecure. Calm and confident only.",
         "No in-body taglines. Brand lines live in the signature.",
         "Email 1 ends at the call to action. Nothing follows it.",
         "Email 2 lands the magnet offer: \"Interested in 5 short-form cuts from one of your existing long-forms? (on us)\"",
-        "Funnel-matched case study every time. Self Financial or Gainbridge for Funnel A. Clever Digital for Funnel B. Ontada or Asset Map for opportunistic plays.",
+        "Case study is always pharma or healthcare. Janssen or Ontada for v1.",
+        "Solution leads with benefits and results, not features. Features only when directly tied to a measurable outcome.",
     ]
     for r in rules:
         story.append(B(r))
 
     story.append(Spacer(1, 0.2*inch))
     story.append(P("Three more notes worth flagging."))
-    story.append(P("Pricing is the one item still open. The default position is that we don't put numbers in cold copy because pricing belongs on the discovery call. If you want it included, we'll test it as a variant in healthcare first."))
-    story.append(P("Sender persona is a separate decision. We need to spin up a Viral-branded sender (name, signature, NYC office address, phone number) before the first send. This is the single biggest trust signal in the entire system; missing it triggers scam suspicion, especially on a new domain."))
-    story.append(P("The lead magnet workflow has to be operational before the first email ships. When a prospect replies to Email 2 asking for the five cuts, the team needs to deliver inside forty-eight hours. That's the conversion moment, and it's the one piece of the system that lives outside this document."))
+    story.append(P("Pricing is the one item still open. The default position is that we don't put numbers in cold copy because pricing belongs on the discovery call. If you want it included, we'll test it as a variant after the first month of sends."))
+    story.append(P("Sender persona is a separate decision. We need to spin up a Viral-branded sender (name, signature, NYC office address, phone number) before the first send. Missing phone or address triggers scam suspicion, especially on a new domain."))
+    story.append(P("The lead magnet workflow has to be operational before the first email ships. When a prospect replies to Email 2 asking for the five cuts, the team needs to deliver inside forty-eight hours. That's the conversion moment, and it lives outside this document."))
 
     doc.build(story, onFirstPage=cover_only, onLaterPages=page_footer)
     print(f"Wrote {OUT}")

@@ -1,382 +1,296 @@
 # Viral Ideas Marketing — Triggers & Email Templates
 
-_Last updated: 2026-05-12 (v2 — incorporates Discovery Questionnaire)_
+_Last updated: 2026-05-12 (v4 — healthcare focus)_
+_GitHub: matteof123/Viral_
 _Owner: Outreach Magic / Kinetyca_
-_Status: v2 — ready for client approval before launch_
 
 ---
 
 ## What This Is
 
-The complete signal taxonomy and email template system for Viral Ideas Marketing outbound, rebuilt against the Discovery Questionnaire (May 2026). Structure modeled on BIGVU's Campaign 198 (2.0% reply rate, 40 interested across 25K sends).
+The outbound system for Viral Ideas, focused on healthcare and pharma for the first 90 days. Two emails per prospect:
 
-Two parallel funnels run different copy with different case studies and different pain language:
+- **Email 1** anchors a buying trigger, pokes the bear with a question that makes the prospect nod, and delivers a benefit-led solution with one case study and a defused objection.
+- **Email 2** pivots to the lead magnet — a free 5-cut repurposing pack from one of their existing long-forms, sent same thread 3-5 days later.
 
-- **Funnel A — Half-Time tier** — built for mid-market marketing managers (Sierra archetype) + growth marketers at funded startups (Lindsey archetype)
-- **Funnel B — Full-Time tier** — built for agency owners and CEOs (Daniel archetype), white-label friendly
-
-Enterprise pharma marketing directors (Brittany) and B2B founders (Adam) are **opportunistic plays, not the main paid spend**. They get their own light track.
-
----
-
-## The Two Funnels
-
-| Field | Funnel A | Funnel B |
-|---|---|---|
-| **Tier** | Half-Time | Full-Time |
-| **Buyer archetype** | Sierra (mid-market marketing manager) + Lindsey (growth marketer at funded startup) | Daniel (agency CEO / Founder, 30-150 staff) |
-| **Buyer revenue band** | $50M-$500M B2C/B2B (Sierra) · $5M-$50M startup (Lindsey) | $5M-$50M agency |
-| **Volume promise** | 8-20 videos/month, first drafts in 24 hours | 30+ videos/month, same-day first drafts, white-label |
-| **Trigger words to use** | "ghosted," "fire drill," "drowning," "we keep starting over," "I need a real team, not a freelancer" | "white-label," "dedicated editor," "the client noticed," "we need someone who can ramp without us teaching them everything" |
-| **Case study to cite** | Self Financial (Sierra archetype) for marketing mgrs · Gainbridge for growth marketers | Clever Digital Marketing (Daniel archetype) |
-| **Hook angle** | Save your week. Stop being the bottleneck. CMO stops asking about video. | Margin recovery. Renewal protection. Client never knows we exist. |
-| **Email 2 broader observation** | "Most teams that come to us had a freelancer ghost mid-campaign…" | "Most agencies come to us after a vendor missed the client deliverable date…" |
-
-**Opportunistic tracks (not main spend):**
-
-| Archetype | Real example | Case study to cite | Hook angle |
-|---|---|---|---|
-| Brittany — enterprise pharma marketing director | Ontada (McKesson healthcare subsidiary) | Ontada / Janssen / J&J | "Approval friendly, on-brand at scale, no surprises in front of leadership" |
-| Adam — B2B founder, established pro services / SaaS | Asset Map (VI client since 2017) | Asset Map | "Strategic partner, not just an editor. Built for compounding LTV." |
+Six rendered prospect pairs at the bottom show exactly what gets sent.
 
 ---
 
 ## Signal Mix
 
-The signal-finding logic runs in two prompts. Both apply to both funnels — the SIGNAL is the same, but the CASE STUDY and PAIN LANGUAGE swap based on which funnel the prospect maps to.
+Ten signals, run in priority order. Stop at first match.
 
-### Prompt A — Pharma-specific signals
+### Pharma-specific signals (run first)
 
-Run first when the lead is in pharma, biotech, healthcare, or med device. Stop at first match. If no signal found, fall through to Prompt B.
+| # | Signal | Recency |
+|---|--------|---------|
+| A1 | FDA approval / new indication / new device approval | last 90 days |
+| A2 | Clinical trial milestone / Phase III readout | last 90 days |
+| A3 | Upcoming medical congress with accepted abstract (ASH, ASCO, AHA, ESMO, AAD, BIO, JPM) | next 60 days |
+| A4 | Currently using a named pharma video agency (Klick, Razorfish Health, Ogilvy Health, EVERSANA, Greater Than One, Real Chemistry, FCB Health, McCann Health) | verified in last 12 months |
 
-| # | Signal | Recency window |
-|---|--------|----------------|
-| A1 | **FDA approval / new indication / new device approval** | last 90 days |
-| A2 | **Clinical trial milestone / Phase III readout / endpoint announcement** | last 90 days |
-| A3 | **Upcoming medical congress with accepted abstract** (ASH, ASCO, AHA, ESMO, AAD, ACR, AAOS, BIO, JPM) | next 60 days |
-| A4 | **Currently using named pharma video agency** (Klick, Razorfish Health, Ogilvy Health, EVERSANA, Greater Than One, Real Chemistry, FCB Health, Havas Health, McCann Health) | verified in last 12 months |
+### Universal signals (also healthcare-relevant)
 
-### Prompt B — Universal signals
-
-Run for ALL leads. Stop at first match.
-
-| # | Signal | Recency | Approx hit rate |
-|---|--------|---------|-----------------|
-| B1 | **Open job posting for video / content / marketing production role** | 30d | ~15-25% |
-| B1.5 | **Freelance video editor "open to work" who lists target company as recent client** | 30d | ~5-10% (direct ghosting signal — strongest Funnel A trigger) |
-| B2 | **New marketing / brand / content leader hired** | 90d | ~20-30% |
-| B3 | **Underutilized long-form footage on brand channel** (15+ min video, no <2-min cuts on social) | 120d | ~50-70% |
-| B4 | **Image-heavy LinkedIn brand page** (<3 videos in 120d) | 120d | ~60-80% |
-| B5 | **Recent company growth / expansion / new client win announcement** | 90d | ~25-40% |
-| B6 | **Recent funding / growth milestone** | 90d | ~10-25% |
-| B7 | **Agency RFP / RFQ posted for video editing** (Funnel B only) | 30d | ~3-5% (strongest Funnel B trigger) |
-| B8 | **Quarterly renewal-cycle boundary** (Q1/Q2/Q3/Q4 close, Funnel B only) | calendar | ~25% of agency leads/quarter |
-| B9 | **Lead's most recent LinkedIn activity** (guaranteed fallback) | 30d | ~85-95% |
+| # | Signal | Recency |
+|---|--------|---------|
+| B1 | Open job posting for video / content / production role | last 30 days |
+| B2 | New marketing / brand / content leader hired | last 90 days |
+| B3 | Underutilized long-form footage on brand channel (15+ min, no <2-min cuts on social) | last 120 days |
+| B4 | Image-heavy LinkedIn brand page (<3 videos in 120 days) | last 120 days |
+| B5 | Recent growth / expansion / new client win announcement | last 90 days |
+| B6 | Recent funding or growth milestone (biotech, health tech) | last 90 days |
 
 ---
 
-## Email 1 — Template
+## Email 1 — Structure
 
 ```
-Subject: [trigger-anchored 2-4 word lowercase subject]
+Hi {Name},
 
-Hi [First Name],
+{Trigger sentence} {Poke-the-bear question}
 
-[TRIGGER — specific observation about the prospect, tied to the signal that fired].
+{Solution with case study, leading with benefits and results. Defuse objection (2-5 words).}
 
-[PAIN — what specifically hurts about this situation, using VOC language from the funnel's pain word library].
-
-[SOLUTION — what Viral concretely does to fix the pain, citing the funnel-matched case study with full identity phrase. Specific differentiators from the library, not generic claims].
-
-Worth a look for [Company]?
+{Soft CTA}
 ```
 
-**Word target:** 70-110 words. **No em dashes. No exclamation marks. No spam words. No bracket placeholders in final render. No apologetic PS. No in-body taglines. No sign-off, no "Cheers," no sender name — email ends at the CTA. Signature handled by EmailBison `{SENDER_EMAIL_SIGNATURE}` system variable.**
+### Constraints
 
-### Subject line pattern (click-bait, still on-brand)
+- 60-100 words total
+- Subject line: 2-4 words, lowercase, curiosity-driven (Before/After/Their thing twist/Time-bound)
+- Solution leads with **benefits and results**, not features. Features only when directly tied to a result.
+- Defuse phrase: 2-5 words inside the solution, neutralizing the biggest objection at the trigger
+- No em dashes. No exclamation marks. No "$" symbol. No "free" — use "on us"
+- No sign-off in body. EmailBison's `{SENDER_EMAIL_SIGNATURE}` handles it.
 
-2-4 words, lowercase, **curiosity-driven**. The strongest subjects fall into 4 buckets:
+### The Poke-the-Bear Question
+
+The question right after the trigger should make the prospect nod silently. It names the consequence of the trigger in the buyer's own internal voice. Not "wouldn't it be nice if…" — instead, "are you about to…" or "is X already happening, or is Y about to start?"
+
+### The Defuse (2-5 words inside the solution)
+
+A short phrase that neutralizes the biggest objection at the trigger.
+
+| Defuse phrase | Handles the objection |
+|---|---|
+| "Approval-friendly from day one" | Will they survive enterprise governance? |
+| "Regulatory-aware from day one" | Do they understand compliance? |
+| "Built for med-legal review" | Will they understand our review process? |
+| "Compliance-aware from day one" | Can they touch HCP-targeted content? |
+| "No ghosting, no ramp gap" | What if they disappear like the last freelancer? |
+| "No ramp time" | Can they start fast enough to matter? |
+
+### Subject Line Patterns
+
+Four patterns work. 2-4 words, lowercase, curiosity-driven.
 
 | Pattern | Examples |
 |---|---|
-| **Before [their action]** — implies an alternative they haven't considered | `before you hire` · `before the rfp closes` (drop urgency-y "closes") → `before the hire` |
-| **After [their event]** — implies "and now what?" | `after the raise` · `after the approval` · `after the win` · `after the announcement` |
-| **Their [thing], [twist]** — possessive + intriguing modifier | `your [topic], untouched` · `your q4 book` · `your freelancer gap` · `linkedin without video` |
-| **Time-bound reference** — specific window the prospect is in | `first 90 days` · `six week sprint` |
+| **Before [their action]** | `before you hire`, `before [conference]` |
+| **After [their event]** | `after the approval`, `after the raise`, `after the readout` |
+| **Their [thing], [twist]** | `your interview, untouched`, `your freelancer gap` |
+| **Time-bound** | `first 90 days`, `six week sprint` |
 
-Avoid: urgency ("now," "closing"), hype ("revolutionary," "game-changing"), and generic ("quick question," "video editing services").
-
-### The CTA swaps depending on intent
-
-- **Default:** "Worth a look for [Company]?"
-- **High-commitment signal (FDA approval, funding round):** "Open to a 15-minute diagnostic?" — matches VI's Doctor Frame sales method
-
-### Strong Solution Pattern (the part most cold emails get wrong)
-
-A weak solution is a feature list ("dedicated editor, fast drafts, good QA"). A strong solution names a workflow, a tool, and a measurable outcome. Three components, in order:
-
-1. **Named case-study client + how they specifically use VI** — output volume, channel, deliverable type. ("Self Financial runs 12 videos a month through our pod.")
-2. **A specific workflow step OR a measurable outcome** — name the tool, the handoff, or the moment something becomes true. ("Their editor learned the brand from the kit handoff and was catching brand drift by video 3.")
-3. **SLA + tool + QA gate** — name the time, the tool, and the quality step. ("Drafts back in 24 hours through Frame.io with timestamped notes, every cut clears a Project Manager QC pass.")
-
-If a sentence in the solution could be said by any video vendor, cut it. The line "we have dedicated editors and fast drafts" describes 50 competitors. The line "the editor was catching brand drift by video 3" describes Viral.
+Avoid: urgency (now, closing), hype (revolutionary, game-changing), generic (quick question, video editing services).
 
 ---
 
-## Trigger → Pain → Solution Library by Funnel
+## Trigger → Poke → Solution Library
 
-### Funnel A — Mid-market marketing mgr (Sierra) + Growth marketer (Lindsey)
+Each signal has its own trigger sentence, poke-the-bear question, and solution skeleton. The full case study and defuse get inserted on render.
 
-Case study to cite: **Self Financial** (Sierra archetype, B2C fintech mid-market) for marketing managers · **Gainbridge** (Lindsey archetype, growth marketer at funded startup) for growth marketers.
+### Pharma-specific signals
 
-| Signal | Subject | Trigger | Pain | Solution (named workflow + measurable outcome) |
-|---|---|---|---|---|
-| **B1** Job posting (editor) | `before you hire` | "Saw [Company] is hiring a Video Editor." | "Most of our clients came to us right after a freelancer ghosted before a launch or a quarterly review. The math on hiring full-time usually doesn't survive a slow quarter either." | "Self Financial runs their video through our pod. The editor learned the brand from the kit handoff and was catching brand drift by video 3. Drafts back in 24 hours through Frame.io with timestamped notes, every cut clears a Project Manager QC pass before it ships." |
-| **B1.5** Freelancer ghosting | `your freelancer gap` | "Saw [Freelancer Name] just listed themselves as open to work after working with [Company]." | "Almost every team that comes to us starts with a freelancer who ghosted right before a launch. The pattern is consistent enough we built the model around it." | "Self Financial runs their video through our pod. After the brand-training week, the editor caught a brand-color misuse their last freelancer had shipped twice. Drafts back in 24 hours through Frame.io, Slack response inside the hour Mon to Fri 9 to 5 EST, no ticket portal." |
-| **B2** New marketing leader | `first 90 days` | "Congrats on the [Role] start at [Company]." | "First 90 days for most marketing leaders means an audit of the content stack while the calendar keeps moving. The brief intake usually gets sloppy and video falls behind first." | "Self Financial runs their content production through our pod for exactly this. Brand kit captured on call one, locked into a templates library the editor pulls from. By video 3, the editor was catching brand drift before their marketing lead saw it. First drafts back in 24 hours." |
-| **B3** Underutilized long-form | `your [topic], untouched` | "I saw [Company]'s recent [Topic] interview on the brand channel. [X] minutes of long-form sitting on YouTube." | "Most teams sit on long-form like this for weeks before short-form ships, because the freelancer rotation keeps starting over with every new brief." | "Self Financial sends one long-form a month. We ship 8 to 10 branded short-form cuts in 5 business days. Captions, brand kit, and platform-specific aspect ratios built into the workflow. Every cut clears a Project Manager QC pass before it goes back." |
-| **B4** Image-heavy LinkedIn | `linkedin without video` | "Saw [Company] is posting [X] times a week on LinkedIn, mostly carousels and graphics." | "Most teams want to add video but the production lift kills it before week three. The freelancer the team trusted last quarter is usually the bottleneck." | "Self Financial runs the video layer on top of their LinkedIn posting cadence. Brand kit captured on call one, locked into a templates library the editor pulls from. By video 3, the cuts looked like their team made them in-house. First drafts back in 24 hours, edited cuts ship weekly." |
-| **B5** Growth announcement | `after the announcement` | "Saw [Company]'s [Partnership / Office / Client / Launch] announcement." | "Announcements like that usually trigger a content sprint inside a team that's already underwater. The CMO walks into the standup asking why the recap isn't out yet." | "Self Financial runs sprint deliverables through our pod when their in-house team is at capacity. One editor across the recap, launch cuts, and internal comms so the voice stays the same across the set. First drafts back in 24 hours, every cut clears a PM QC pass." |
-| **B6** Funding (growth mkter) | `after the raise` | "Congrats on [Company]'s Series [X] last month." | "Growth-stage rounds usually mean creative supply becomes the bottleneck. Sales enablement, paid ads, recruiting content, and investor updates all need video at once, and hiring takes too long." | "Gainbridge, the growth team inside Group 1001 with about 160 billion in AUM, runs their paid-creative testing through our pod. New ad variants ship twice a week. Hook and retention feedback baked into every test, so the editor knows what scored before shipping the next." |
-| **B9** LinkedIn activity (fallback) | `your [topic] post` | "Saw your recent LinkedIn post on [Topic]." | "Posts that land usually die after 7 days on the feed. Republishing as branded short-form extends the lifespan, but most teams don't have the production capacity to do it consistently." | "Self Financial runs LinkedIn-to-video repurposing through our pod. Each post becomes a branded 60-second video in 5 business days. Captions, voiceover, brand kit baked in. Every cut clears a PM QC pass before it goes back." |
-
-### Funnel B — Agency CEO (Daniel)
-
-Case study to cite: **Clever Digital Marketing** (Daniel archetype, ~$10M, ~80 staff, Canadian agency, white-label model).
-
-| Signal | Subject | Trigger | Pain | Solution (named workflow + measurable outcome) |
-|---|---|---|---|---|
-| **B1** Job posting (editor) | `before the hire` | "Saw [Agency] is hiring a Senior Video Editor." | "Most agencies that come to us tried to hire their way out and the math broke. A full-time editor is dead weight on slow weeks, and the brand calendar doesn't pause while you ramp." | "Clever Digital Marketing, a Canadian agency running about 80 staff, runs our team behind their accounts white-label. The editor sits inside each client's Slack channel under their brand. Same-day first drafts on Full-Time, revisions tracked in Frame.io, every cut clears the account lead's QC pass before going client-facing." |
-| **B5** New client win | `after the win` | "Saw [Agency] just announced the [Client] win." | "New accounts pile onto an in-house editing team that's already at capacity. The existing accounts start asking pointed questions about turnaround." | "Clever Digital Marketing runs our team behind five of their accounts white-label. Each editor learned the client's brand from the kit handoff and was catching drift by the third project. Same-day first drafts, dedicated editor per account, Slack inside the hour. Their renewal book got cleaner. The clients never knew." |
-| **B7** Agency RFP for video | `your video rfp` | "Saw [Agency]'s RFP for video editing partners." | "Most agencies post the RFP because the current vendor's quality dropped when volume scaled. The brand stopped looking like the brand, and the client noticed." | "Clever Digital Marketing runs our team white-label behind their accounts. One dedicated editor per account, brand kit captured on the first kit handoff. Same-day first drafts on Full-Time, no rotation, no quality dip when volume spikes. Every cut clears the account lead's QC pass before going client-facing." |
-| **B8** Q4 renewal cycle | `your q4 book` | "Q4 renewal cycle approaching for [Agency]." | "Most agencies hit the renewal cycle with one or two accounts already flagging video as a churn risk. The vendor scaled the team through a pool and the brand drifted." | "Clever Digital Marketing runs our team behind five of their accounts white-label. Dedicated editor per account, brand kit handed off on call one. By the third project, the editor was catching brand drift before the account lead saw it. Same-day first drafts on Full-Time, no surprises before quarterly business reviews." |
-| **B3** Underutilized long-form (agency client) | `their footage, sliced` | "I saw [Agency]'s recent case-study film for [Client]. [X] minutes of long-form." | "Most agencies sit on long-form like this because cutting it for client-facing social, sales enablement, and partner-facing usually means re-briefing a freelancer who delivers off-brand by week three." | "Clever Digital Marketing runs client repurposing through our pod white-label. We take one client long-form and ship 8 to 10 branded short-form cuts in 5 business days. The cuts go out under the agency's brand. Every cut clears the account lead's QC pass before delivery." |
-
-### Opportunistic — Enterprise pharma (Brittany) + B2B founder (Adam)
-
-Case studies: **Ontada / Janssen / Johnson & Johnson** for pharma · **Asset Map** for founder-led pro services / SaaS.
-
-| Signal | Subject | Trigger | Pain | Solution (named workflow + measurable outcome) |
-|---|---|---|---|---|
-| **A1** FDA approval (Brittany) | `after the approval` | "Congrats on the FDA approval at [Company] last month." | "Most enterprise launches need approval-friendly volume that survives legal review on the first pass. Most vendors don't survive enterprise governance." | "Ontada, the McKesson healthcare-data subsidiary, runs their HCP and clinical-trial cuts through our pod. By the third project, the editor learned the compliance pattern: how their legal team flags claims, how their brand team catches color and font misuse, what triggers a redaction. A six-week cycle shrinks to two. Submissions clear legal first-pass more often than not." |
-| **A3** Medical congress (Brittany) | `before [conference]` | "Saw [Company]'s team is presenting at [Conference] next month." | "Congress content has a hard deadline and three audiences: HCP attendees, KOLs, and the field team. Most brand teams over-spec the deliverable count and under-deliver on quality." | "Janssen runs their congress content through our pod. One editor across the launch teaser, day-of clips, and recap series so the brand voice stays the same across all three. Regulatory QA built into the editor's workflow, every cut cleared before it goes to legal." |
-| **B5** Founder-led growth (Adam) | `after the milestone` | "Saw [Company]'s [milestone] announcement." | "Founder-led marketing functions at this stage usually hit a wall where the junior marketing lead is drowning and the strategic conversations stop happening because everyone's executing." | "Asset Map has been a Viral client since 2017. Their marketing lead has a partner who thinks about positioning, platform strategy, and what to ship next, not just an editor who takes orders. We were producing for them at Series A. Eight years later we're still producing." |
-
----
-
-## Email 2 — Template (Lead-Magnet Pivot)
-
-Same thread, ~3-5 days after Email 1. The broader observation in paragraph 1 pulls from the **5 reasons clients switch** (per discovery), funnel-matched to the prospect.
-
-```
-Subject: Re: [Email 1 subject]
-
-[BROADER OBSERVATION — funnel-matched, drawn from the 5 switching reasons].
-
-Viral takes any long-form video and ships 5 short-form pieces in 5 business days. Branded, captioned, [audience-specific qualifier].
-
-Interested in 5 short-form cuts from one of your existing [Company] long-forms? (on us)
-```
-
-**Word target:** 60-90 words.
-
-### Broader observation library by signal type
-
-| Email 1 signal type | Funnel | Email 2 paragraph 1 observation |
+| Signal | Subject | Trigger + Poke + Solution skeleton |
 |---|---|---|
-| Freelancer ghosting / job posting | A | "Almost every team we work with came to us after a freelancer ghosted mid-campaign. The pattern is consistent enough we built the model around it." |
-| Quality drift / new marketing leader | A | "The most common story we hear is great first month, quality slip by month four. Usually that means the vendor scaled the account through a pool. We don't run pools." |
-| Funding / paid creative pain | A | "Most growth teams that come to us have run paid for a quarter on a 14-day refresh cycle that should have been 5. The vendor couldn't keep up." |
-| Agency editor hire / RFP | B | "Most agencies come to us after a vendor that survived strategy meetings but missed the client deliverable date. The math at signup stops working by month three." |
-| Agency renewal cycle / churn risk | B | "Most agencies that come to us have a renewal book with one or two accounts flagging video as a churn risk. The vendor scaled the team through a pool. We don't." |
-| Enterprise pharma | Opportunistic | "Enterprise teams usually come to us after a vendor couldn't survive legal and brand-compliance review. We've built around the approval cycle, not against it." |
-| Founder (Adam-shaped) | Opportunistic | "Founder-led marketing functions usually outgrow their vendor stack and don't notice until deals start slipping. We tend to stay 8+ years for that reason." |
+| **A1** FDA approval | `after the approval` | "Saw [Company] just got the FDA approval last month. Are you about to spend six weeks pushing HCP cuts, sales enablement, and KOL interviews through med-legal at the same time?" → Janssen case + "calendar holds, CMO stops asking about video in standup" + **Approval-friendly from day one.** |
+| **A2** Phase III readout | `after the readout` | "Saw [Company] just published the Phase III readout. Is the pre-launch content already queued, or are advisory boards, MOA explainers, and KOL cuts about to hit med-legal at the same time?" → Ontada case + "six-week cycle shrinks to two, team ships without the firefights" + **Built for med-legal review.** |
+| **A3** Medical congress | `before [conference]` | "Saw [Company]'s abstract accepted for [Conference] next month. Are the launch teaser, day-of cuts, and recap series queued for legal yet, or is the brand team starting the build the week of?" → Janssen case + "full set ships in time, brand voice consistent across HCP/KOL/field audiences" + **Regulatory-aware from day one.** |
+| **A4** Named pharma agency | `agency overflow` | "Saw [Company] credits [Agency] on the [Drug] work. Is the editing volume bottlenecking at the agency's rate during launch quarters, or are you splitting the work to a separate pod already?" → Ontada case + "agency keeps strategy, you get launch-quarter throughput without the rate spike" + **Approval-friendly from day one.** |
 
-### Audience-specific qualifier (paragraph 2)
+### Universal signals
 
-| Funnel / signal type | Qualifier line |
-|---|---|
-| Funnel A — Sierra (mid-market) | "ready to post on LinkedIn or YouTube" |
-| Funnel A — Lindsey (growth) | "ready for paid or organic" |
-| Funnel B — Daniel (agency) | "ready to deliver under your label" |
-| Opportunistic — Brittany (pharma) | "regulatory-aware" |
-| Opportunistic — Adam (founder) | "positioned for the next phase" |
+| Signal | Subject | Trigger + Poke + Solution skeleton |
+|---|---|---|
+| **B1** Job posting (editor) | `before you hire` | "Saw [Company] is hiring a [Role]. Are you covering the launch calendar yourself until that role ramps in three months?" → Ontada case + "launch ships on cadence through every search, no one apologizes for video in standup, brand stays consistent without daily babysitting" + **No ghosting, no ramp gap.** |
+| **B2** New marketing leader | `first 90 days` | "Congrats on the [Role] start at [Company]. Are you trying to audit the content stack while the launch calendar keeps moving?" → Ontada case + "audit runs in parallel, first quarter ships on cadence, brand kit captured on call one" + **No ramp time.** |
+| **B3** Underutilized long-form | `your [topic], untouched` | "Saw [Company]'s recent [Topic] interview on the brand channel. [X] minutes on YouTube, no shorter cuts anywhere. Is the short-form derivative queued, or has med-legal review killed the repurposing cadence again?" → Janssen case + "one long-form becomes 5 to 10 branded short-form pieces, LinkedIn cadence holds without the rebrief cycle" + **Compliance-aware from day one.** |
+| **B4** Image-heavy LinkedIn | `linkedin without video` | "Saw [Company] is posting [X] times a week on LinkedIn, mostly carousels and graphics. Is the in-house team trying to add video on top of existing work, or has the production lift already killed it?" → Janssen case + "video layer ships on top of existing cadence, brand kit captured once, cuts ship weekly without disrupting in-house workload" + **Built for med-legal review.** |
+| **B5** Growth announcement | `after the [event]` | "Saw [Company]'s [Partnership / Office / Launch] announcement. Are the launch clips, internal comms, and recap deck about to land on the same week, or has the in-house team already scaled for the sprint?" → Ontada case + "sprint deliverables ship on time, brand stays consistent across the set, in-house team stays sane" + **No ramp time.** |
+| **B6** Funding round | `after the raise` | "Saw [Company] just closed [Series X]. Are the launch teasers, investor updates, recruiting content, and KOL clips all about to land on the same week without a production team ramped up?" → Ontada case + "creative supply scales with the calendar, CMO doesn't ask why the recap is late" + **No ramp time.** |
 
 ---
 
-## Rendered Examples (6 prospect pairs)
+## Six Rendered Examples (all healthcare/pharma)
 
-Each pair shows the fully resolved Email 1 + Email 2 ready to send. No placeholders. Pulled across all funnels.
+### 1. Rachel Park, Sr. Marketing Director, Eli Lilly Oncology
+**Signal A1 — FDA approval**
 
-### Prospect 1 — Maya Reyes, Senior Marketing Manager, Step
-**Funnel A · Signal B1 (job posting)**
-
-**Email 1**
-```
-Subject: before you hire
-
-Hi Maya, saw Step is hiring a Video Editor. Most of our clients came to us
-right after a freelancer ghosted before a launch or a quarterly review. The
-math on hiring full-time usually doesn't survive a slow quarter either.
-
-Self Financial runs their video through our pod. The editor learned the
-brand from the kit handoff and was catching brand drift by video 3. Drafts
-back in 24 hours through Frame.io with timestamped notes, every cut clears
-a Project Manager QC pass before it ships.
-
-Worth a look for Step?
-```
-
-**Email 2**
-```
-Subject: re: before you hire
-
-Almost every team we work with came to us after a freelancer ghosted
-mid-campaign. The pattern is consistent enough we built the model around it.
-
-Viral takes any long-form video and ships 5 short-form pieces in 5 business
-days. Branded, captioned, ready to post on LinkedIn or YouTube.
-
-Interested in 5 short-form cuts from one of your existing Step long-forms?
-(on us)
-```
-
----
-
-### Prospect 2 — Tom Diaz, Head of Growth, Mercury
-**Funnel A · Signal B6 (Series C funding)**
-
-**Email 1**
-```
-Subject: after the raise
-
-Hi Tom, congrats on Mercury's Series C last quarter. The 90 days after a
-round usually mean creative supply becomes the bottleneck. Sales enablement,
-paid ads, recruiting content, and investor updates all need video at once,
-and hiring takes too long.
-
-Gainbridge, the growth team inside Group 1001 with about 160 billion in
-AUM, runs their paid-creative testing through our pod. New ad variants ship
-twice a week. Hook and retention feedback baked into every test, so the
-editor knows what scored before shipping the next.
-
-Open to a 15-minute diagnostic?
-```
-
-**Email 2**
-```
-Subject: re: after the raise
-
-Most growth teams that come to us have run paid for a quarter on a 14-day
-refresh cycle that should have been 5. The vendor couldn't keep up.
-
-Viral takes any long-form video and ships 5 short-form pieces in 5 business
-days. Branded, captioned, ready for paid or organic.
-
-Interested in 5 short-form cuts from one of your existing Mercury
-long-forms? (on us)
-```
-
----
-
-### Prospect 3 — Sarah Chen, CEO, Anomaly
-**Funnel B · Signal B1 (agency editor hire)**
-
-**Email 1**
-```
-Subject: before the hire
-
-Hi Sarah, saw Anomaly is hiring a Senior Video Editor. Most agencies that
-come to us tried to hire their way out and the math broke. A full-time
-editor is dead weight on slow weeks, and the brand calendar doesn't pause
-while you ramp.
-
-Clever Digital Marketing, a Canadian agency running about 80 staff, runs
-our team behind their accounts white-label. The editor sits inside each
-client's Slack under their brand. Same-day first drafts on Full-Time,
-revisions in Frame.io, every cut clears the account lead's QC pass before
-going client-facing.
-
-Worth a look for Anomaly?
-```
-
-**Email 2**
-```
-Subject: re: before the hire
-
-Most agencies come to us after a vendor that survived strategy meetings but
-missed the client deliverable date. The math at signup stops working by
-month three.
-
-Viral takes any long-form video and ships 5 short-form pieces in 5 business
-days. Branded, captioned, ready to deliver under your label.
-
-Interested in 5 short-form cuts from one of your existing client long-forms?
-(on us)
-```
-
----
-
-### Prospect 4 — Jessica Park, VP Marketing, Cala Health
-**Funnel A · Signal B2 (new marketing leader)**
-
-**Email 1**
-```
-Subject: first 90 days
-
-Hi Jessica, congrats on the VP Marketing start at Cala Health. First 90 days
-for most marketing leaders means an audit of the content stack while the
-calendar keeps moving. The brief intake usually gets sloppy and video falls
-behind first.
-
-Self Financial runs their content production through our pod for exactly
-this. Brand kit captured on call one, locked into a templates library the
-editor pulls from. By video 3, the editor was catching brand drift before
-their marketing lead saw it. First drafts back in 24 hours.
-
-Worth a look for Cala?
-```
-
-**Email 2**
-```
-Subject: re: first 90 days
-
-The most common story we hear is great first month, quality slip by month
-four. Usually that means the vendor scaled the account through a pool. We
-don't run pools.
-
-Viral takes any long-form video and ships 5 short-form pieces in 5 business
-days. Branded, captioned, ready to post.
-
-Interested in 5 short-form cuts from one of your existing Cala Health
-long-forms? (on us)
-```
-
----
-
-### Prospect 5 — Rachel Park, Senior Marketing Director, Eli Lilly Oncology
-**Opportunistic · Signal A1 (FDA approval)**
-
-**Email 1**
 ```
 Subject: after the approval
 
-Hi Rachel, congrats on the FDA approval at Lilly Oncology last month. Most
-enterprise launches need approval-friendly volume that survives legal review
-on the first pass. Most vendors don't survive enterprise governance.
+Hi Rachel,
 
-Ontada, the McKesson healthcare-data subsidiary, runs their HCP and
-clinical-trial cuts through our pod. By the third project, the editor
-learned the compliance pattern: how their legal team flags claims, how
-their brand team catches color and font misuse, what triggers a redaction.
-A six-week cycle shrinks to two.
+Saw Eli Lilly Oncology just got the FDA approval last month. Are you about to
+spend six weeks pushing HCP cuts, sales enablement, and KOL interviews through
+med-legal at the same time?
 
-Open to a 15-minute diagnostic?
+The team at Janssen runs launch quarters through us. The calendar holds and
+the CMO stops asking about video in standup. Approval-friendly from day one.
+
+Open to a 15-minute walkthrough for Lilly?
 ```
 
-**Email 2**
+**62 words.** Defuse: "Approval-friendly from day one" (4 words).
+
+---
+
+### 2. Maya Reyes, Sr. Marketing Manager, Karuna Therapeutics
+**Signal B1 — Open video editor hire**
+
 ```
-Subject: re: after the approval
+Subject: before you hire
+
+Hi Maya,
+
+Saw Karuna Therapeutics is hiring a Senior Video Editor. Are you covering the
+launch calendar yourself until that role ramps in three months?
+
+Brand teams at Ontada use us instead of hiring. The launch ships on cadence
+through every search, no one apologizes for video in standup, and the brand
+stays consistent without daily babysitting. No ghosting, no ramp gap.
+
+Worth a look for Karuna?
+```
+
+**68 words.** Defuse: "No ghosting, no ramp gap" (5 words).
+
+---
+
+### 3. David Chen, Sr. Brand Director, BMS Hematology
+**Signal A3 — ASCO abstract accepted**
+
+```
+Subject: before asco
+
+Hi David,
+
+Saw BMS Hematology's abstract accepted for ASCO next month. Are the launch
+teaser, day-of cuts, and recap series queued for legal yet, or is the brand
+team starting the build the week of?
+
+The team at Janssen runs congress content through us. The full set ships in
+time, the brand voice stays consistent across all three audiences, and no
+one chases the editor for the day-of clip. Regulatory-aware from day one.
+
+Worth a 15-minute walkthrough?
+```
+
+**72 words.** Defuse: "Regulatory-aware from day one" (4 words).
+
+---
+
+### 4. Sarah Lee, Sr. Marketing Director, Sage Therapeutics
+**Signal A2 — Phase III readout**
+
+```
+Subject: after the readout
+
+Hi Sarah,
+
+Saw Sage Therapeutics just published the Phase III readout. Is the pre-launch
+content already queued, or are advisory boards, MOA explainers, and KOL cuts
+about to hit med-legal at the same time?
+
+Brand teams at Ontada run pre-launch content through us. The six-week cycle
+shrinks to two and the team ships without the firefights. Built for med-legal
+review.
+
+Open to a 15-minute walkthrough?
+```
+
+**62 words.** Defuse: "Built for med-legal review" (4 words).
+
+---
+
+### 5. Jessica Park, VP Marketing, Karyopharm Therapeutics
+**Signal B3 — Underutilized long-form (KOL interview)**
+
+```
+Subject: your interview, untouched
+
+Hi Jessica,
+
+Saw Karyopharm's recent KOL interview on the brand channel. 38 minutes on
+YouTube, no shorter cuts anywhere. Is the short-form derivative queued, or
+has med-legal review killed the repurposing cadence again?
+
+Brand teams at Janssen run KOL repurposing through us. One long-form becomes
+5 to 10 branded short-form pieces and the LinkedIn cadence holds without the
+rebrief cycle. Compliance-aware from day one.
+
+Worth a look for Karyopharm?
+```
+
+**68 words.** Defuse: "Compliance-aware from day one" (4 words).
+
+---
+
+### 6. Daniel Hwang, VP Marketing, Inozyme Pharma
+**Signal B6 — Series C funding**
+
+```
+Subject: after the raise
+
+Hi Daniel,
+
+Saw Inozyme Pharma just closed Series C. Are the launch teasers, investor
+updates, recruiting content, and KOL clips all about to land on the same
+week without a production team ramped up?
+
+Brand teams at Ontada use us through funding cycles like this. Creative
+supply scales with the calendar and the CMO doesn't ask why the recap is
+late. No ramp time.
+
+Open to a 15-minute walkthrough?
+```
+
+**64 words.** Defuse: "No ramp time" (3 words).
+
+---
+
+## Email 2 — Template (Lead Magnet Pivot)
+
+Same thread, 3-5 days after Email 1. Pivots to the free 5-cut repurposing pack.
+
+```
+Subject: re: [Email 1 subject]
+
+[Broader observation drawn from the 5 reasons clients switch — see library
+below].
+
+Viral takes any long-form video and ships 5 short-form pieces in 5 business
+days. Branded, captioned, regulatory-aware.
+
+Interested in 5 short-form cuts from one of your existing [Company]
+long-forms? (on us)
+```
+
+### Broader observation library
+
+| Email 1 signal | Email 2 paragraph 1 observation |
+|---|---|
+| FDA approval / Phase III readout / launch sprint | "Enterprise teams usually come to us after a vendor couldn't survive legal and brand-compliance review. We've built around the approval cycle, not against it." |
+| Job posting / freelancer ghosting | "Almost every team we work with came to us after a freelancer ghosted mid-campaign. The pattern is consistent enough we built the model around it." |
+| New marketing leader | "The most common story we hear is great first month, quality slip by month four. Usually that means the vendor scaled the account through a pool. We don't run pools." |
+| Congress / underutilized long-form | "Most pharma teams sit on long-form for weeks because the repurposing cycle keeps colliding with med-legal review. We've built the workflow around that constraint." |
+| Funding / growth milestone | "Most growth-stage teams come to us after a quarter where creative supply couldn't keep up with the calendar. Hiring takes too long, vendors collapse under volume." |
+
+### Six Rendered Email 2 Examples
+
+```
+1. Rachel at Lilly Oncology (re: after the approval)
 
 Enterprise teams usually come to us after a vendor couldn't survive legal
 and brand-compliance review. We've built around the approval cycle, not
@@ -389,165 +303,127 @@ Interested in 5 short-form cuts from one of your existing Lilly long-forms?
 (on us)
 ```
 
----
-
-### Prospect 6 — Marcus Webb, COO, Sage Communications
-**Funnel B · Signal B5 + B8 (new client win + Q4 renewal cycle)**
-
-**Email 1**
 ```
-Subject: your q4 book
+2. Maya at Karuna (re: before you hire)
 
-Hi Marcus, saw Sage just announced the new client win. Most agencies hitting
-Q4 with new accounts and an in-house team already at capacity see existing
-clients start asking pointed questions about turnaround.
-
-Clever Digital Marketing runs our team behind five of their accounts
-white-label. The editor learned each client's brand from the kit handoff
-and was catching brand drift by the third project. Same-day first drafts
-on Full-Time, Slack response inside the hour, every cut clears the account
-lead's QC pass before going client-facing.
-
-Their renewal book got cleaner. Clients never knew.
-
-Worth a look for Sage?
-```
-
-**Email 2**
-```
-Subject: re: your q4 book
-
-Most agencies that come to us have a renewal book with one or two accounts
-flagging video as a churn risk. The vendor scaled the team through a pool.
-We don't.
+Almost every team we work with came to us after a freelancer ghosted
+mid-campaign. The pattern is consistent enough we built the model around it.
 
 Viral takes any long-form video and ships 5 short-form pieces in 5 business
-days. Branded, captioned, ready to deliver under your label.
+days. Branded, captioned, regulatory-aware.
 
-Interested in 5 short-form cuts from one of your existing client long-forms?
+Interested in 5 short-form cuts from one of your existing Karuna long-forms?
+(on us)
+```
+
+```
+3. David at BMS (re: before asco)
+
+Most pharma teams sit on long-form for weeks because the repurposing cycle
+keeps colliding with med-legal review. We've built the workflow around that
+constraint.
+
+Viral takes any long-form video and ships 5 short-form pieces in 5 business
+days. Branded, captioned, regulatory-aware.
+
+Interested in 5 short-form cuts from one of your existing BMS long-forms?
+(on us)
+```
+
+```
+4. Sarah at Sage (re: after the readout)
+
+Enterprise teams usually come to us after a vendor couldn't survive legal
+and brand-compliance review. We've built around the approval cycle, not
+against it.
+
+Viral takes any long-form video and ships 5 short-form pieces in 5 business
+days. Branded, captioned, regulatory-aware.
+
+Interested in 5 short-form cuts from one of your existing Sage long-forms?
+(on us)
+```
+
+```
+5. Jessica at Karyopharm (re: your interview, untouched)
+
+Most pharma teams sit on long-form for weeks because the repurposing cycle
+keeps colliding with med-legal review. We've built the workflow around that
+constraint.
+
+Viral takes any long-form video and ships 5 short-form pieces in 5 business
+days. Branded, captioned, regulatory-aware.
+
+Interested in 5 short-form cuts from one of your existing Karyopharm
+long-forms? (on us)
+```
+
+```
+6. Daniel at Inozyme (re: after the raise)
+
+Most growth-stage teams come to us after a quarter where creative supply
+couldn't keep up with the calendar. Hiring takes too long, vendors collapse
+under volume.
+
+Viral takes any long-form video and ships 5 short-form pieces in 5 business
+days. Branded, captioned, regulatory-aware.
+
+Interested in 5 short-form cuts from one of your existing Inozyme long-forms?
 (on us)
 ```
 
 ---
 
-## VI Differentiator Library (rank-ordered by specificity)
+## Voice of Customer Language
 
-These are the REAL differentiators from the Discovery Questionnaire. The library is now split into two tiers: **specific workflow elements** (best — they sound like nobody else's marketing) vs **generic claims** (use only if a specific one doesn't fit).
+Use these in the poke-the-bear question and the pain framing. They're the words clients have actually said to Dave on sales calls.
 
-### Tier 1 — Specific workflow + measurable outcomes (USE THESE FIRST)
+**Operational pain (Sierra/Lindsey-shape buyers):**
+ghosted, dropped the ball, off brand, inconsistent, unreliable, another fire drill, I'm drowning, out of bandwidth, we keep starting over, the last batch was rough, I just need someone I can trust, we can't scale this, I need a real team not a freelancer.
 
-| Differentiator | When to use |
-|---|---|
-| **"The editor learned the brand from the kit handoff and was catching brand drift by video 3"** | Default — works in every signal. Most specific outcome we have. |
-| **"Brand kit captured on call one, locked into a templates library the editor pulls from"** | New marketing leader (B2) or new-account-onboarding signals |
-| **"Drafts back in 24 hours through Frame.io with timestamped notes"** (Funnel A) / **"Same-day drafts on Full-Time through Frame.io"** (Funnel B) | Speed pain + names the tool |
-| **"Every cut clears a Project Manager QC pass before it ships"** | Quality-fear pain. Names the QA gate. |
-| **"The editor sits inside the client's Slack channel under their brand"** (Funnel B) | Agency white-label signals |
-| **"After the brand-training week, the editor caught a brand-color misuse their last freelancer had shipped twice"** | Post-freelancer-ghost signals |
-| **"By the third project, the editor learned the compliance pattern: how legal flags claims, how brand catches color and font misuse, what triggers a redaction"** | Pharma/regulated environments |
-| **"A six-week cycle shrinks to two. Submissions clear legal first-pass more often than not"** | Enterprise pharma (Brittany) |
-| **"New ad variants ship twice a week. Hook and retention feedback baked into every test, so the editor knows what scored before shipping the next"** | Growth marketer (Lindsey) / paid creative pain |
-| **"One editor across the launch teaser, day-of clips, and recap series so the brand voice stays the same across the set"** | Sprint deliverables (launch, congress, campaign) |
-| **"The cuts go out under your brand. The client never knows we exist."** | Funnel B white-label |
-| **"We were producing for them at Series A. Eight years later we're still producing."** | Founder (Adam) — long-LTV proof |
-
-### Tier 2 — Generic claims (use ONLY if no Tier 1 fits)
-
-| Differentiator | When to use |
-|---|---|
-| "One dedicated editor, not a rotating pool" | Default fallback |
-| "Slack response inside the hour Mon to Fri 9 to 5 EST" | Communication-collapse pain |
-| "Unlimited revisions on the first batch until the baseline is right" | Quality-fear pain |
-| "No ticket portal, no edit lottery, no autoresponder" | Vendor-collapse pain |
-
-**Rule:** If a sentence in the solution could be said by any subscription editing service, it's Tier 2 and probably needs to be replaced with a Tier 1 specific. Strong solutions name the workflow, the tool, the outcome, or all three.
-
----
-
-## VOC Language Library (use the prospect's own words)
-
-Discovery extracted the exact words VI's clients use. Use them in pain lines — they sound like the prospect's own internal monologue.
-
-### All buyers say:
-- "ghosted" / "dropped the ball"
-- "off brand" / "inconsistent" / "unreliable"
-- "another fire drill" / "fire drill"
-- "I'm drowning" / "out of bandwidth"
-- "we keep starting over"
-- "the last batch was rough"
-- "I just need someone I can trust"
-- "I can't keep doing this"
-- "we can't scale this"
-- "I need a real team, not a freelancer"
-
-### Agencies (Funnel B) say:
-- "white-label"
-- "dedicated editor"
-- "we need someone who can ramp without us teaching them everything"
-- "the client noticed"
-
-### Enterprise marketers (Brittany) say:
-- "approval friendly"
-- "on brand at scale"
-- "we can't have surprises"
+**Enterprise pharma (Brittany-shape buyers):**
+approval friendly, on brand at scale, we can't have surprises, six-week cycle, med-legal review, regulatory pass, brand compliance audit, missed redaction, legal flag.
 
 ---
 
 ## Copy Rules (Non-Negotiable)
 
-| Rule | Why |
-|------|-----|
-| 50-100 words per email (Email 1: 70-100, Email 2: 60-90) | Brand book: grade 8-10 reading level. Above 100 words loses the buyer. |
-| Subject: 2-4 words, lowercase, anchored to a specific prospect-owned thing | "your moa interview" beats "video production services for pharma" |
-| Person and company names always capitalized | Even in lowercase subject lines |
-| No em dashes | Use sentence breaks or commas |
-| No exclamation marks | Brand book: calm and confident, never urgent |
-| No spam words. Especially "free" | Replace with "on us" |
-| No "$" symbol | Pricing belongs on the call, not in cold body |
-| No bracket placeholders in final render | Every variable must be resolved before send |
-| No "Best, Sender Name" inside body | Signature handled by EmailBison `{SENDER_EMAIL_SIGNATURE}` |
-| No apologetic PS | "If this isn't a fit..." reads insecure. Calm and confident only. |
-| No in-body taglines | BIGVU bug to avoid — keep brand lines in signature, not body |
-| Soft yes/no CTA in Email 1 | "Worth a look for [Company]?" or "Open to a 15-minute diagnostic?" (high-intent signals) |
-| Lead magnet drops in Email 2 only | Email 1 teases the product. Email 2 offers the 5-cut pack. |
-| Email 2 paragraph 1 pulls from the 5 switching reasons | Makes the prospect feel understood ("they know what I went through") |
-| Funnel-matched case study | Self Financial for Sierra/Funnel A · Gainbridge for Lindsey/Funnel A · Clever Digital for Daniel/Funnel B · Ontada/J&J for Brittany · Asset Map for Adam |
-| VOC language in pain lines | Use the prospect's own words: ghosted, fire drill, drowning, white-label, approval friendly |
+- 60-100 words per email (both Email 1 and Email 2)
+- Subject: 2-4 words, lowercase, curiosity-driven
+- Person and company names always capitalized
+- No em dashes. Use sentence breaks or commas.
+- No exclamation marks. Brand voice is calm and confident.
+- No "$" symbol. Pricing belongs on the call, not in cold body.
+- No "free" — replace with "on us"
+- No bracket placeholders in the final render
+- No "Best, [Name]" in body. EmailBison signature variable handles it.
+- No apologetic PS. "If this isn't a fit…" reads insecure.
+- No in-body taglines. Brand lines stay in signature.
+- Email 1 ends at CTA. Nothing after.
+- Email 2 lands the lead magnet: "Interested in 5 short-form cuts from one of your existing [Company] long-forms? (on us)"
+- Case study is always healthcare/pharma — Ontada (McKesson) or Janssen for v1
+- Solution leads with benefits and results, not features
 
 ---
 
-## Why This Structure Works (Evidence)
+## Operational Pre-Reqs Before Launch
 
-- **BIGVU Campaign 198:** 25,000+ sent, 285 replies (1.1%), 40 marked interested (14% positive-of-reply ratio). Email 1 alone drove 58% of all replies.
-- **Discovery validation:** the 5 reasons clients switch (ghosting, quality drift, order-taker vendor, SLA collapse, brand drift) map 1:1 to the pain library above. We're not guessing at pain.
-- **Funnel split rationale:** Funnel B (agency) has 8-15x higher LTV than Funnel A — one Daniel-shaped contract absorbs edits for 5-15 end clients and agencies stick longer than direct clients. The copy investment in Funnel B is justified by the deal economics.
-
----
-
-## Operational Pre-Requisites Before Launch
-
-These must be in place before Email 1 ships:
-
-1. **Sample delivery workflow.** When a prospect replies to Email 2, the team must deliver the 5-cut pack within 24-48 hours. Same single point of failure that broke BIGVU's funnel (positives go cold after Calendly pivot). Viral cannot repeat.
-2. **Funnel-matched case study assets.** Self Financial, Gainbridge, Clever Digital, Ontada, Asset Map — each needs at least a one-paragraph proof block ready to reference. Hard outcome numbers are the gap (Dave to backfill 2-3 per case study).
-3. **Sender persona signature.** Name, brand, NYC location, phone number, website. Missing phone/address triggers scammer suspicion.
-4. **Signal-finder prompts deployed.** Prompt A + Prompt B in Clay or equivalent, with priority-ordered evaluation.
-5. **Suppression list functional.** Negative replies, OOOs, prior unsubscribes feed back into Clay / EmailBison suppression.
-6. **Funnel-routing logic.** Lead's title + industry determines which funnel they go into. Mid-market mkt mgr + growth marketer → Funnel A. Agency owner/CEO → Funnel B. Enterprise pharma + B2B founder → opportunistic.
+1. **Sample delivery workflow.** When a prospect replies to Email 2, the team must deliver the 5 cuts within 48 hours. This is the conversion moment.
+2. **Sender persona signature.** Name, brand, NYC location, phone, website. Missing phone/address triggers scam suspicion on a new domain.
+3. **Signal-finder prompts deployed.** Prompt A + Prompt B in Clay or equivalent, priority-ordered.
+4. **Suppression list functional.** Negatives, OOOs, prior unsubscribes feed back into Clay/EmailBison.
+5. **Case study assets ready.** Ontada and Janssen — one-paragraph proof block each. Dave to backfill 2-3 hard outcome numbers per case study to strengthen the proof beyond logos-only.
 
 ---
 
-## Open Decisions for Dave Before Launch
+## Open Decisions for Dave
 
-1. **Lead magnet for Email 2: 5-cut pack vs. Video Grader vs. 15-min diagnostic?** Current default is 5-cut pack (matches BIGVU's proven sample-first model). Video Grader is self-service inbound. Diagnostic is the Doctor Frame closer. Recommend: 5-cut pack for cold, Diagnostic as Email 3 if no reply.
-2. **Pricing transparency in cold copy?** Currently removed entirely. Brand-book says "clear pricing with no surprises," but cold reveal might be premature. Recommend: stay off pricing in cold, mention on call.
-3. **HVAC vs. law firms in scope?** Discovery confirms law in scope and HVAC dropped. Already reconciled.
-4. **Hard outcome numbers per case study?** Dave owes 2-3 numbers per case study (e.g., "Self Financial cut their freelancer rotation from 5 to 1 and shipped 3x/week consistently"). Without these, the proof line is logos-only and weaker than BIGVU's.
-5. **Coordination with existing Lead Hunter outbound** (vlad@leadhunter.net). Pause, parallel, or handoff?
-6. **PR firms / construction angle?** Out of scope per discovery (no mention in ICPs).
-7. **Sender persona — Sarah Stanfield (BigVu pattern) or VI-specific (e.g., Jessica Terry, who's the praised PM in client reviews)?** Recommend: spin up a new Viral persona, do not reuse BIGVU's Sarah Stanfield.
+1. **Pricing transparency in cold copy.** Currently off entirely. Recommend stay off in cold, mention on call.
+2. **Hard outcome numbers per case study.** Need 2-3 numbers per Ontada and Janssen so proof beats logos-only.
+3. **Sender persona.** Spin up a new Viral-branded sender with NYC location and phone number.
+4. **Coordination with existing Lead Hunter outbound** (vlad@leadhunter.net). Pause, parallel, or handoff?
+5. **Funnel B (agencies) and fintech timing.** Healthcare is first 90 days. When do we layer agencies in? Recommendation: validate healthcare reply rate first, then build Funnel B in week 7-8.
 
 ---
 
-_Document version: v2 (2026-05-12)_
-_GitHub: https://github.com/matteof123/Viral/blob/main/email-sequences/triggers-and-templates.md_
+_Document version: v4 (2026-05-12) | Healthcare focus for first 90 days_
