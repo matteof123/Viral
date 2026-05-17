@@ -230,23 +230,64 @@ def build():
 
     # ---- Subject lines ----
     story.append(H("Subject lines"))
-    story.append(LEAD("Two to four words, lowercase, built to create a small curiosity gap."))
-    story.append(P("Four patterns work. The first two carry most of the volume."))
+    story.append(LEAD("Every subject is generated from a template plus the prospect's specific data."))
+    story.append(P("Seven templates cover every signal we run. The right template gets picked automatically based on which signal fired for the lead. The subject always references something specific to the prospect (their company name, drug, event, hire, or content asset) — never generic placeholders."))
 
+    story.append(H2("The seven templates"))
     subj_rows = [
-        ["Pattern", "What it does", "Examples"],
-        ["<b>Before [their action]</b>", "Hints at an alternative they haven't considered",
-         "<font face='Courier'>before you hire</font>, <font face='Courier'>before asco</font>"],
-        ["<b>After [their event]</b>", "Implies and-now-what",
-         "<font face='Courier'>after the approval</font>, <font face='Courier'>after the readout</font>, <font face='Courier'>after the raise</font>"],
-        ["<b>Their [thing], [twist]</b>", "Possessive with an intriguing modifier",
-         "<font face='Courier'>your interview, untouched</font>, <font face='Courier'>your freelancer gap</font>"],
-        ["<b>Time-bound</b>", "Names the window the prospect is in",
-         "<font face='Courier'>first 90 days</font>, <font face='Courier'>six week sprint</font>"],
+        ["Template", "Pattern", "When picked"],
+        ["<b>Possessive</b>", "<font face='Courier'>{Company}'s {their thing}</font>",
+         "FDA approval, underutilized content, LinkedIn cadence"],
+        ["<b>Location pin</b>", "<font face='Courier'>{Company} at {event}</font>",
+         "Medical congress signals"],
+        ["<b>Time anchor</b>", "<font face='Courier'>Before</font> or <font face='Courier'>After {their event}</font>",
+         "Phase III readout, growth announcement, new leader"],
+        ["<b>Pairing</b>", "<font face='Courier'>{their trigger} + {consequence}</font>",
+         "Video editor hire, named agency relationship"],
+        ["<b>Name + topic</b>", "<font face='Courier'>{First name}, {after/before/about} {their thing}</font>",
+         "Funding round, peer-to-peer feel"],
+        ["<b>Observational</b>", "<font face='Courier'>Saw {their specific signal}</font>",
+         "Public signal (LinkedIn post, YouTube upload, press release)"],
+        ["<b>Window</b>", "<font face='Courier'>{Company}, the next {timeframe}</font>",
+         "Quarterly or launch-window framing"],
     ]
-    story.append(make_table(subj_rows, [1.6*inch, 2.6*inch, 2.5*inch]))
+    story.append(make_table(subj_rows, [1.3*inch, 2.7*inch, 2.7*inch]))
 
-    story.append(P("What we avoid: urgency words (now, closing, last chance), hype words (revolutionary, game-changing, world-class), and generic placeholders (quick question, video editing services). Your brand voice is calm and confident; the subject line is the first place a prospect tests whether we know that."))
+    story.append(H2("How they render across the six prospects"))
+    render_rows = [
+        ["Prospect", "Signal", "Template", "Subject"],
+        ["Rachel, Lilly Oncology", "FDA approval", "Possessive", "<font face='Courier'>Eli Lilly Oncology's launch calendar</font>"],
+        ["Maya, Karuna Therapeutics", "Video editor hire", "Pairing", "<font face='Courier'>Karuna's editor hire + the launch calendar</font>"],
+        ["David, BMS Hematology", "ASCO abstract", "Location pin", "<font face='Courier'>BMS Hematology at ASCO next month</font>"],
+        ["Sarah, Sage Therapeutics", "Phase III readout", "Time anchor", "<font face='Courier'>After Sage Therapeutics' Phase III readout</font>"],
+        ["Jessica, Karyopharm", "Underutilized KOL", "Observational", "<font face='Courier'>Saw Karyopharm's 38-minute KOL interview</font>"],
+        ["Daniel, Inozyme Pharma", "Series C funding", "Name + topic", "<font face='Courier'>Daniel, after Inozyme's Series C</font>"],
+    ]
+    story.append(make_table(render_rows, [1.5*inch, 1.4*inch, 1.1*inch, 2.7*inch]))
+
+    story.append(PageBreak())
+
+    story.append(H("Subject line — when no signal fires"))
+    story.append(LEAD("If the signal-finder returns nothing usable, the default still feels personalised because it names the company."))
+    story.append(P("The fallback uses a Possessive template with a universal pharma noun. Personalisation by company name; specificity by the pharma-specific noun. If the prospect's role is known, the default varies slightly to match how that role thinks about content."))
+
+    fallback_rows = [
+        ["Role detected", "Default fallback subject"],
+        ["Marketing Manager / Senior Marketing Manager", "<font face='Courier'>{Company}'s launch calendar</font>"],
+        ["Senior Marketing Director / Brand Director", "<font face='Courier'>{Company}'s med-legal queue</font>"],
+        ["Growth Marketer / Performance Marketer", "<font face='Courier'>{Company}'s creative refresh</font>"],
+        ["VP Marketing / CMO / Head of Marketing", "<font face='Courier'>{Company}'s content engine</font>"],
+        ["No role data available", "<font face='Courier'>{Company}'s launch calendar</font>"],
+    ]
+    story.append(make_table(fallback_rows, [3.4*inch, 3.3*inch]))
+
+    story.append(Spacer(1, 0.15*inch))
+    story.append(LEAD("One important rule for the no-signal case:"))
+    story.append(P("If no signal fires AND we can't find a recent LinkedIn post or comment from the lead either, we don't email them. The Email 1 body needs a real trigger and poke-the-bear question to work; sending into an empty trigger produces weak copy and burns the sending domain's reputation. Filter the lead from the campaign list until a signal appears."))
+
+    story.append(Spacer(1, 0.15*inch))
+    story.append(H2("What we avoid in subject lines"))
+    story.append(P("Urgency words (now, closing, last chance). Hype words (revolutionary, game-changing, world-class). Generic placeholders (quick question, video editing services). Fake threading (<font face='Courier'>Re:</font> or <font face='Courier'>Fwd:</font> without a real thread). ALL CAPS. Multiple punctuation. Dollar-symbol claims. Your brand voice is calm and confident; the subject line is the first place a prospect tests whether we know that."))
 
     story.append(PageBreak())
 
@@ -284,7 +325,7 @@ def build():
     story.extend(email_pair(
         "Rachel Park", "Senior Marketing Director", "Eli Lilly Oncology",
         "Pharma. Trigger: Eli Lilly Oncology received FDA approval last month.",
-        "after the approval",
+        "Eli Lilly Oncology's launch calendar",
         """Hi Rachel,
 
 Saw Eli Lilly Oncology just got the FDA approval last month. Are you about to spend six weeks pushing HCP cuts, sales enablement, and KOL interviews through med-legal at the same time?
@@ -305,7 +346,7 @@ Interested in 5 short-form cuts from one of your existing Lilly long-forms? (on 
     story.extend(email_pair(
         "Maya Reyes", "Senior Marketing Manager", "Karuna Therapeutics",
         "Pharma. Trigger: Karuna Therapeutics posted an open Senior Video Editor role.",
-        "before you hire",
+        "Karuna's editor hire + the launch calendar",
         """Hi Maya,
 
 Saw Karuna Therapeutics is hiring a Senior Video Editor. Are you covering the launch calendar yourself until that role ramps in three months?
@@ -326,7 +367,7 @@ Interested in 5 short-form cuts from one of your existing Karuna long-forms? (on
     story.extend(email_pair(
         "David Chen", "Senior Brand Director", "BMS Hematology",
         "Pharma. Trigger: BMS Hematology's abstract was accepted for ASCO next month.",
-        "before asco",
+        "BMS Hematology at ASCO next month",
         """Hi David,
 
 Saw BMS Hematology's abstract accepted for ASCO next month. Are the launch teaser, day-of cuts, and recap series queued for legal yet, or is the brand team starting the build the week of?
@@ -347,7 +388,7 @@ Interested in 5 short-form cuts from one of your existing BMS long-forms? (on us
     story.extend(email_pair(
         "Sarah Lee", "Senior Marketing Director", "Sage Therapeutics",
         "Pharma. Trigger: Sage Therapeutics published the Phase III readout.",
-        "after the readout",
+        "After Sage Therapeutics' Phase III readout",
         """Hi Sarah,
 
 Saw Sage Therapeutics just published the Phase III readout. Is the pre-launch content already queued, or are advisory boards, MOA explainers, and KOL cuts about to hit med-legal at the same time?
@@ -368,7 +409,7 @@ Interested in 5 short-form cuts from one of your existing Sage long-forms? (on u
     story.extend(email_pair(
         "Jessica Park", "VP Marketing", "Karyopharm Therapeutics",
         "Pharma. Trigger: Karyopharm uploaded a 38-minute KOL interview to YouTube with no short-form derivative.",
-        "your interview, untouched",
+        "Saw Karyopharm's 38-minute KOL interview",
         """Hi Jessica,
 
 Saw Karyopharm's recent KOL interview on the brand channel. 38 minutes on YouTube, no shorter cuts anywhere. Is the short-form derivative queued, or has med-legal review killed the repurposing cadence again?
@@ -389,7 +430,7 @@ Interested in 5 short-form cuts from one of your existing Karyopharm long-forms?
     story.extend(email_pair(
         "Daniel Hwang", "VP Marketing", "Inozyme Pharma",
         "Biotech. Trigger: Inozyme Pharma closed Series C funding last month.",
-        "after the raise",
+        "Daniel, after Inozyme's Series C",
         """Hi Daniel,
 
 Saw Inozyme Pharma just closed Series C. Are the launch teasers, investor updates, recruiting content, and KOL clips all about to land on the same week without a production team ramped up?

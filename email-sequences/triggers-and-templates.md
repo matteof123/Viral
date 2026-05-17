@@ -81,18 +81,73 @@ A short phrase that neutralizes the biggest objection at the trigger.
 | "No ghosting, no ramp gap" | What if they disappear like the last freelancer? |
 | "No ramp time" | Can they start fast enough to matter? |
 
-### Subject Line Patterns
+### Subject Line Templates (variable-driven)
 
-Four patterns work. 2-4 words, lowercase, curiosity-driven.
+Every subject is generated from a template + per-lead variables. Seven templates cover every signal we run. The right template is picked by `signal_type` automatically.
 
-| Pattern | Examples |
-|---|---|
-| **Before [their action]** | `before you hire`, `before [conference]` |
-| **After [their event]** | `after the approval`, `after the raise`, `after the readout` |
-| **Their [thing], [twist]** | `your interview, untouched`, `your freelancer gap` |
-| **Time-bound** | `first 90 days`, `six week sprint` |
+#### The seven template formulas
 
-Avoid: urgency (now, closing), hype (revolutionary, game-changing), generic (quick question, video editing services).
+| # | Template | Variable syntax | Default for |
+|---|---|---|---|
+| 1 | Possessive | `{company_name}'s {trigger_asset}` | FDA approval, underutilized content, LinkedIn cadence, no-signal default |
+| 2 | Location pin | `{company_name} at {trigger_event}` | Medical congress |
+| 3 | Time anchor | `Before` or `After {trigger_event}` | Phase III readout, growth announcement, new marketing leader |
+| 4 | Pairing | `{trigger_asset} + {consequence}` | Video editor hire, named pharma agency |
+| 5 | Name + topic | `{first_name}, {connector} {company_name}'s {topic}` | Funding round |
+| 6 | Observational | `Saw {company_name}'s {trigger_asset}` | Public signal (LinkedIn post, YouTube upload, press release) |
+| 7 | Window | `{company_name}, the next {timeframe}` | Quarterly / launch-window context |
+
+#### Required inputs per lead
+
+| Field | Example | Used by |
+|---|---|---|
+| `first_name` | `Rachel` | Template 5 |
+| `company_name` | `Eli Lilly Oncology` | Templates 1, 2, 5, 6, 7 |
+| `signal_type` | `FDA_approval` | Template selection |
+| `trigger_asset` | `Tagrisso`, `38-minute KOL interview`, `Senior Video Editor role` | Templates 1, 4, 6 |
+| `trigger_event` | `ASCO`, `Phase III readout`, `Series C` | Templates 2, 3 |
+| `consequence` | `the launch calendar`, `six weeks of med-legal` | Template 4 |
+| `timeframe` | `90 days`, `six weeks` | Template 7 |
+| `connector` | `about`, `after`, `before`, `on` | Template 5 |
+
+#### Signal → template default mapping (the prompt rule)
+
+```
+IF signal_type == FDA_approval         → Possessive    → "{company_name}'s launch calendar"
+IF signal_type == Phase_III_readout    → Time anchor   → "After {company_name}'s Phase III readout"
+IF signal_type == medical_congress     → Location pin  → "{company_name} at {trigger_event} next month"
+IF signal_type == named_pharma_agency  → Pairing       → "{company_name}'s editing volume + {agency_name}"
+IF signal_type == video_editor_hire    → Pairing       → "{company_name}'s editor hire + the launch calendar"
+IF signal_type == new_marketing_leader → Time anchor   → "First 90 days at {company_name}"
+IF signal_type == underutilized_KOL    → Observational → "Saw {company_name}'s {duration} KOL interview"
+IF signal_type == image_heavy_LI       → Possessive    → "{company_name}'s LinkedIn cadence"
+IF signal_type == growth_announcement  → Time anchor   → "After the {trigger_event}"
+IF signal_type == funding_round        → Name + topic  → "{first_name}, after {company_name}'s {round}"
+```
+
+#### No-signal fallback
+
+If the signal-finder returns nothing usable, the default uses Possessive with a role-aware pharma noun. Personalisation by company name; specificity by the pharma-specific noun.
+
+Simple version (no role data):
+```
+IF signal_type == NO_SIGNAL → "{company_name}'s launch calendar"
+```
+
+Role-aware version (if role is reliable):
+```
+IF signal_type == NO_SIGNAL:
+  IF role contains "VP" or "CMO"                       → "{company_name}'s content engine"
+  IF role contains "Senior Director" or "Brand Dir."   → "{company_name}'s med-legal queue"
+  IF role contains "Growth" or "Performance"           → "{company_name}'s creative refresh"
+  ELSE                                                  → "{company_name}'s launch calendar"
+```
+
+**Important:** If `signal_type == NO_SIGNAL` AND no recent LinkedIn activity is available either, **do not email the lead**. The Email 1 body cannot be written without a real trigger. Filter the lead from the campaign list.
+
+#### What to avoid in subject lines
+
+Urgency (now, closing, last chance), hype (revolutionary, game-changing, world-class), generic placeholders (quick question, video editing services), fake threading (`Re:` / `Fwd:` without a real thread), ALL CAPS, multiple punctuation (??, !!), and dollar-symbol claims.
 
 ---
 
@@ -125,10 +180,10 @@ Each signal has its own trigger sentence, poke-the-bear question, and solution s
 ## Six Rendered Examples (all healthcare/pharma)
 
 ### 1. Rachel Park, Sr. Marketing Director, Eli Lilly Oncology
-**Signal A1 — FDA approval**
+**Signal A1 — FDA approval** · Template: Possessive
 
 ```
-Subject: after the approval
+Subject: Eli Lilly Oncology's launch calendar
 
 Hi Rachel,
 
@@ -147,10 +202,10 @@ Open to a 15-minute walkthrough for Lilly?
 ---
 
 ### 2. Maya Reyes, Sr. Marketing Manager, Karuna Therapeutics
-**Signal B1 — Open video editor hire**
+**Signal B1 — Open video editor hire** · Template: Pairing
 
 ```
-Subject: before you hire
+Subject: Karuna's editor hire + the launch calendar
 
 Hi Maya,
 
@@ -169,10 +224,10 @@ Worth a look for Karuna?
 ---
 
 ### 3. David Chen, Sr. Brand Director, BMS Hematology
-**Signal A3 — ASCO abstract accepted**
+**Signal A3 — ASCO abstract accepted** · Template: Location pin
 
 ```
-Subject: before asco
+Subject: BMS Hematology at ASCO next month
 
 Hi David,
 
@@ -192,10 +247,10 @@ Worth a 15-minute walkthrough?
 ---
 
 ### 4. Sarah Lee, Sr. Marketing Director, Sage Therapeutics
-**Signal A2 — Phase III readout**
+**Signal A2 — Phase III readout** · Template: Time anchor
 
 ```
-Subject: after the readout
+Subject: After Sage Therapeutics' Phase III readout
 
 Hi Sarah,
 
@@ -215,10 +270,10 @@ Open to a 15-minute walkthrough?
 ---
 
 ### 5. Jessica Park, VP Marketing, Karyopharm Therapeutics
-**Signal B3 — Underutilized long-form (KOL interview)**
+**Signal B3 — Underutilized long-form (KOL interview)** · Template: Observational
 
 ```
-Subject: your interview, untouched
+Subject: Saw Karyopharm's 38-minute KOL interview
 
 Hi Jessica,
 
@@ -238,10 +293,10 @@ Worth a look for Karyopharm?
 ---
 
 ### 6. Daniel Hwang, VP Marketing, Inozyme Pharma
-**Signal B6 — Series C funding**
+**Signal B6 — Series C funding** · Template: Name + topic
 
 ```
-Subject: after the raise
+Subject: Daniel, after Inozyme's Series C
 
 Hi Daniel,
 
@@ -290,7 +345,7 @@ long-forms? (on us)
 ### Six Rendered Email 2 Examples
 
 ```
-1. Rachel at Lilly Oncology (re: after the approval)
+1. Rachel at Lilly Oncology (re: Eli Lilly Oncology's launch calendar)
 
 Enterprise teams usually come to us after a vendor couldn't survive legal
 and brand-compliance review. We've built around the approval cycle, not
@@ -304,7 +359,7 @@ Interested in 5 short-form cuts from one of your existing Lilly long-forms?
 ```
 
 ```
-2. Maya at Karuna (re: before you hire)
+2. Maya at Karuna (re: Karuna's editor hire + the launch calendar)
 
 Almost every team we work with came to us after a freelancer ghosted
 mid-campaign. The pattern is consistent enough we built the model around it.
@@ -317,7 +372,7 @@ Interested in 5 short-form cuts from one of your existing Karuna long-forms?
 ```
 
 ```
-3. David at BMS (re: before asco)
+3. David at BMS (re: BMS Hematology at ASCO next month)
 
 Most pharma teams sit on long-form for weeks because the repurposing cycle
 keeps colliding with med-legal review. We've built the workflow around that
@@ -331,7 +386,7 @@ Interested in 5 short-form cuts from one of your existing BMS long-forms?
 ```
 
 ```
-4. Sarah at Sage (re: after the readout)
+4. Sarah at Sage (re: After Sage Therapeutics' Phase III readout)
 
 Enterprise teams usually come to us after a vendor couldn't survive legal
 and brand-compliance review. We've built around the approval cycle, not
@@ -345,7 +400,7 @@ Interested in 5 short-form cuts from one of your existing Sage long-forms?
 ```
 
 ```
-5. Jessica at Karyopharm (re: your interview, untouched)
+5. Jessica at Karyopharm (re: Saw Karyopharm's 38-minute KOL interview)
 
 Most pharma teams sit on long-form for weeks because the repurposing cycle
 keeps colliding with med-legal review. We've built the workflow around that
@@ -359,7 +414,7 @@ long-forms? (on us)
 ```
 
 ```
-6. Daniel at Inozyme (re: after the raise)
+6. Daniel at Inozyme (re: Daniel, after Inozyme's Series C)
 
 Most growth-stage teams come to us after a quarter where creative supply
 couldn't keep up with the calendar. Hiring takes too long, vendors collapse
